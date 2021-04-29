@@ -33,6 +33,7 @@ group :development, :test do
   gem 'factory_bot_rails'
   gem 'faker-japanese'
   gem 'ffaker'
+  gem 'guard-rails'
   gem 'guard-rspec'
   gem 'guard-rubocop'
   gem 'rails-controller-testing'

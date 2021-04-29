@@ -16,5 +16,12 @@ Style/AsciiComments:
   Enabled: false
 
 # ドキュメンテーションを必須にしない
-Documentation:
+Style/Documentation:
   Enabled: false
+
+# Spec内ではBlockの長さを制限しない
+Metrics/BlockLength:
+  Exclude:
+    - 'Guardfile'
+    - 'spec/*'
+    - 'spec/**/*'

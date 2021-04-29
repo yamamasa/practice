@@ -6,11 +6,13 @@ services:
       dockerfile: ./docker/proxy/Dockerfile
     ports:
       - 3001:80
+    volumes:
+      - ./rails/coverage:/app/coverage
     depends_on:
       - rails
     restart: always
   rails:
-    build: 
+    build:
       context: ./
       dockerfile: ./docker/rails/Dockerfile
     env_file:
@@ -22,7 +24,7 @@ services:
     depends_on:
       - mysql
     restart: always
-     
+
   mysql:
     image: mysql:5.7
     env_file:

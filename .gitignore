@@ -5,7 +5,7 @@ capybara-*.html
 /db/*.sqlite3-journal
 /db/*.sqlite3-[0-9]*
 /public/system
-/coverage/
+/rails/coverage/
 /spec/tmp
 *.orig
 rerun.txt
