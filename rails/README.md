@@ -1,24 +1,14 @@
-# README
+# Rails Practice
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Ruby on Rails で記述していく
 
-Things you may want to cover:
+# 前提
+ - Ruby 3.0.1
+ - Ruby on Rails 6.1.3.1
 
-* Ruby version
+# 初回作業
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+以下のコマンドでDBを作ってね
+```
+docker-compose exec rails rake db:create
+```

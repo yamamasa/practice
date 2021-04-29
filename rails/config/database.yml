@@ -13,9 +13,10 @@ default: &default
   adapter: mysql2
   encoding: utf8mb4
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  username: root
-  password:
-  socket: /var/lib/mysql/mysql.sock
+  host: <%= ENV.fetch("RAILS_DB_HOST") { '127.0.0.1' } %>
+  username: <%= ENV.fetch("RAILS_DB_USERNAME") { 'root' } %>
+  password: <%= ENV.fetch("RAILS_DB_PASSWORD") { nil } %>
+  port: 3306
 
 development:
   <<: *default

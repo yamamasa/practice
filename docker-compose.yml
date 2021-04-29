@@ -1,0 +1,37 @@
+version: '3'
+services:
+  proxy:
+    build:
+      context: ./
+      dockerfile: ./docker/proxy/Dockerfile
+    ports:
+      - 3001:80
+    depends_on:
+      - rails
+    restart: always
+  rails:
+    build: 
+      context: ./
+      dockerfile: ./docker/rails/Dockerfile
+    env_file:
+      - ./compose.env
+    ports:
+      - 3000
+    volumes:
+      - ./rails:/app
+    depends_on:
+      - mysql
+    restart: always
+     
+  mysql:
+    image: mysql:5.7
+    env_file:
+      - ./compose.env
+    volumes:
+      - mysql-data:/var/lib/mysql
+    restart: always
+
+
+volumes:
+  mysql-data:
+    driver: local

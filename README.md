@@ -5,12 +5,19 @@
 
 ## 注意点
 
-- 世間のベストプラクティスとされる実装とはずれている可能性があります。あくまで個人的な見解なので、ご容赦ください。
+- 世間のベストプラクティスとされる実装とはずれている可能性があります。
+- あくまで個人的なベストプラクティスなので、ご容赦ください。
 
-## コマンド
+## 起動方法
+- docker-composeで立ち上げるとポート3001でアクセスできます。
+  ```
+  $ docker-compose up -d --build
+  ```
+
+## 備忘録
 ### Railsのアプリ作成
 
 ```
-# rails new practice --api -d mysql
-# mv practice rails
+$ rails new practice --api -d mysql
+$ mv practice rails
 ```
