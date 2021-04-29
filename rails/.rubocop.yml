@@ -1,0 +1,20 @@
+require:
+  - rubocop-rails
+  - rubocop-rspec
+AllCops:
+  TargetRubyVersion: 3.0
+  NewCops: enable
+Rails:
+  Enabled: true
+
+# frozen_string_literalのシミュレーションを行わない
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+# 日本語のコメントを許可する
+Style/AsciiComments:
+  Enabled: false
+
+# ドキュメンテーションを必須にしない
+Documentation:
+  Enabled: false
