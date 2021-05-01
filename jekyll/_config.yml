@@ -23,7 +23,7 @@ description: > # this means to ignore newlines until "baseurl:"
 baseurl: "/practice" # the subpath of your site, e.g. /blog
 
 # This is mostly for testing
-url: "https://yamamasa.github.io/practice/" # the base hostname & protocol for your site
+url: "https://yamamasa.github.io/" # the base hostname & protocol for your site
 
 # Social (First three Required)
 repo: "https://github.com/yamamasa/practice/"
@@ -89,6 +89,6 @@ defaults:
       layout: "post"
 
 # google analytics
-google_analytics:
+google_analytics: G-BZ37EBGXPV
 # development
 host: 0.0.0.0

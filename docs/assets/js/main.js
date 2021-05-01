@@ -45,7 +45,7 @@
                         return
                     }
                     var query = $(this).val();
-                    var searchPage = "http://0.0.0.0:4000/search/?q=" + query;
+                    var searchPage = "http://0.0.0.0:4000/practice/search/?q=" + query;
                     document.location = searchPage;
                     return false;
                 });

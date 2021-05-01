@@ -1,22 +1,11 @@
 - title: Documentation
   url: docs
   links:
-    - title: "Getting Started"
-      url: "docs/getting-started"
+    - title: "Introduction"
+      url: "docs/introduction"
     - title: "Knowhow"
       url: "docs/knowhow"
-    - title: "Projects"
-      url: "docs/projects"
-      children:
-        - title: Yao
-          url: "docs/projects/yao"
-          children:
-          - title: Yao
-            url: "docs/projects/yao"
-
-        - title: Tags Page
-          url: "tags"
-    - title: "About"
-      url: "about"
+    - title: "要件"
+      url: "docs/requirements"
     - title: "News"
       url: "news"
