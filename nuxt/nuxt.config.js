@@ -33,7 +33,7 @@ export default {
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
-
+    '@/plugins/axios'
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -83,13 +83,17 @@ export default {
 
   auth: {
     strategies: {
+
       auth0: {
-        domain: process.env.AUTH0_DOMAIN, // Auth0 App Domain
-        client_id: process.env.AUTH0_CLIENT_ID, // Auth0 App Client ID
+        domain: process.env.AUTH0_DOMAIN,
+        client_id: process.env.AUTH0_CLIENT_ID,
+        response_type: 'id_token',
+        token_key: 'id_token',
+        userinfo_endpoint: false
       },
     },
     redirect: {
-      login: '/',  // 未ログイン時のリダイレクト先
+      login: '/login',  // 未ログイン時のリダイレクト先
       logout: '/logout',  // ログアウト処理を実行した直後のリダイレクト先
       callback: '/callback',  // コールバックURL
       home: '/mypage',  // ログイン後に遷移するページ

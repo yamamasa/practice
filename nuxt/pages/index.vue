@@ -8,5 +8,13 @@
 </template>
 
 <script>
-export default {}
+export default {
+  created() {
+    this.$axios
+      .get(`${this.$config.apiURL}/api/v1`)
+      .then(response => {
+
+      })
+  }
+}
 </script>

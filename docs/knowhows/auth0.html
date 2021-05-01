@@ -23,22 +23,19 @@
 <link rel="icon" type="image/png" href="/practice/assets/favicons/android-144x144.png" sizes="144x144">
 <link rel="icon" type="image/png" href="/practice/assets/favicons/android-192x192.png"sizes="192x192">
 
-<title>Documentation</title>
-<meta property="og:title" content="Documentation" />
-<meta property="og:description" content="Yamamasaの独断と偏見に基づくベストプラクティスをまとめるサイト
-" />
+<title>auth0の導入</title>
+<meta property="og:title" content="auth0の導入" />
+<meta property="og:description" content="Introduction" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="http://0.0.0.0:4000" />
 <meta property="og:site_name" content="http://0.0.0.0:4000" />
 
-<meta itemprop="name" content="Documentation">
-<meta itemprop="description" content="Yamamasaの独断と偏見に基づくベストプラクティスをまとめるサイト
-">
+<meta itemprop="name" content="auth0の導入">
+<meta itemprop="description" content="Introduction">
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Documentation"/>
-<meta name="twitter:description" content="Yamamasaの独断と偏見に基づくベストプラクティスをまとめるサイト
-"/>
+<meta name="twitter:title" content="auth0の導入"/>
+<meta name="twitter:description" content="Introduction"/>
 
 <link rel="stylesheet" href="/practice/assets/css/main.css">
 <link rel="stylesheet" href="/practice/assets/css/palette.css">
@@ -133,22 +130,10 @@ $(document).ready(function() {
                   <a href="/practice/docs/introduction" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">概要</a>
                 </li>
                 
-                  <ul>
-                    <li class="collapse show" id="">
-                      
-                    </li>
-                  </ul>
-                
               
                 <li class="td-sidebar-nav__section-title">
                   <a href="/practice/docs/requirements" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">要件</a>
                 </li>
-                
-                  <ul>
-                    <li class="collapse show" id="">
-                      
-                    </li>
-                  </ul>
                 
               
             </li>
@@ -175,6 +160,12 @@ $(document).ready(function() {
                   <a href="/practice/knowhows/auth0" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">auth0の導入</a>
                 </li>
                 
+                  <ul>
+                    <li class="collapse show" id="">
+                      
+                    </li>
+                  </ul>
+                
               
             </li>
           </ul>
@@ -197,27 +188,48 @@ $(document).ready(function() {
 	      <ol class="breadcrumb spb-1">
               
               
+                <li class="breadcrumb-item">
+                  <a href="http://0.0.0.0:4000/practice/knowhows/">Knowhows</a>
+                </li>
+                
                 <li class="breadcrumb-item active" aria-current="page">
-	          <a href="http://0.0.0.0:4000/practice/docs/">Documentation</a>
+	          <a href="http://0.0.0.0:4000/practice/knowhows/auth0">auth0の導入</a>
                 </li>
                 
 	      </ol>
            </nav>
            <div class="td-content">
-	      <h1 id="documentation">Documentation</h1>
+	      <h1 id="auth0の導入">auth0の導入</h1>
 
-<div class="section-index">
-    <hr class="panel-line" />
-    
-    <div class="entry">
-    <h5><a href="/practice/docs/introduction">Introduction</a></h5>
-    <p>Introduction</p>
-    </div>
-    <div class="entry">
-    <h5><a href="/practice/docs/requirements">Requirements</a></h5>
-    <p>プロジェクト要件</p>
-    </div>
-</div>
+<h2 id="概要">概要</h2>
+<p>以下参考ページの情報ベースでスムーズに導入できた。</p>
+
+<h3 id="nuxtへの導入">Nuxtへの導入</h3>
+<p><a href="https://auth.nuxtjs.org/">nuxt auth</a>を使えば結構簡単。
+axiosとの連動は<a href="https://tech.smartcamp.co.jp/entry/auth0-jwt">Auth0でJWT認証してみた話 - SMARTCAMP Engineer Blog</a>が参考になる</p>
+<h4 id="参考ページ">参考ページ</h4>
+<ul>
+  <li><a href="https://tech.smartcamp.co.jp/entry/2019/05/31/185456">Nuxt.jsとAuth0でモダンなソーシャルログインを実装してみる - SMARTCAMP Engineer Blog</a></li>
+  <li><a href="https://simple-it-life.com/2021/01/15/nuxt-auth/">Nuxt.jsのmiddlewareとAuth Moduleを使ってAuth0ログインを実装する | Simple IT Life</a></li>
+</ul>
+
+<h4 id="注意点">注意点</h4>
+<ul>
+  <li>NuxtのStoreを一度も使ってない場合、空ファイルでよいので作らないと動かない。</li>
+  <li>auth-modulesでnanoidのエラーが出るが、バージョン指定(2.1.11)で入れないと動かなかった。
+    <ul>
+      <li><a href="https://github.com/nuxt-community/auth-module/issues/750">GitHub Issue</a> <em>Excelente, 100% recomend</em>とのこと</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="rails-への導入">Rails への導入</h3>
+<p><a href="https://github.com/auth0/ruby-auth0">Auth0 Ruby</a>でいけた</p>
+
+<h4 id="参考ページ-1">参考ページ</h4>
+<ul>
+  <li><a href="https://tech.smartcamp.co.jp/entry/auth0-jwt">Auth0でJWT認証してみた話 - SMARTCAMP Engineer Blog</a></li>
+</ul>
 
 <script
   src="/practice/assets/js/jquery-3.3.1/jquery-3.3.1.min.js"
@@ -268,7 +280,8 @@ $.each(headers, function(i, header){
 })
 </script>
 
-
+<script>
+$('h1').first().append('<div></div>')</script>
 
 
               

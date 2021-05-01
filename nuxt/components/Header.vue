@@ -16,13 +16,20 @@
           </b-navbar-nav>
 
           <!-- Right aligned nav items -->
-          <b-navbar-nav class="ml-auto">
-
-            <b-nav-item v-if="loggedIn" right>
+          <b-navbar-nav class="ml-auto" v-if="loggedIn">
+            <b-nav-item right>
               {{famlyName}} さん
-
+            </b-nav-item>
+            <b-nav-item @click="logout">
+              <fa-icon icon="sign-out-alt" class="mr-2" />
             </b-nav-item>
           </b-navbar-nav>
+          <b-navbar-nav class="ml-auto" v-else>
+            <b-nav-item @click="login" class="btn btn-primary btn-sm">
+              ログイン
+            </b-nav-item>
+          </b-navbar-nav>
+
         </b-collapse>
       </b-navbar>
     </div>
@@ -36,11 +43,14 @@ export default {
       return this.$auth.loggedIn
     },
     famlyName() {
-      return this.$auth.loggedIn ? this.$auth.$state.user.nickname : 'ゲスト'
+      // return this.$auth.loggedIn ? this.$auth.$state.user.nickname : 'ゲスト'
     },
 
   },
   methods: {
+    login() {
+      this.$auth.loginWith('auth0')
+    },
     logout() {
       this.$auth.logout();
     }

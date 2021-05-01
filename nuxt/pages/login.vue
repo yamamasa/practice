@@ -17,7 +17,6 @@ export default Vue.extend({
   auth: false,
   methods: {
     loginWithAuthZero() {
-      console.log(this.$auth)
       this.$auth.loginWith('auth0')
     },
   },

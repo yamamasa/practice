@@ -15,7 +15,7 @@ export default Vue.extend({
   middleware: "auth",
   computed: {
     famlyName() {
-      return this.$auth.loggedIn ? this.$auth.$state.user.nickname : 'ゲスト'
+      // return this.$auth.loggedIn ? this.$auth.$state.user.nickname : 'ゲスト'
     },
   },
 })
