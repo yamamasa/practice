@@ -10,7 +10,9 @@ services:
       - ./rails/coverage:/app/coverage
     depends_on:
       - rails
+      - nuxt
     restart: always
+
   rails:
     build:
       context: ./
@@ -23,6 +25,20 @@ services:
       - ./rails:/app
     depends_on:
       - mysql
+    restart: always
+
+  nuxt:
+    build:
+      context: ./
+      dockerfile: ./docker/nuxt/Dockerfile
+    env_file:
+      - ./compose.env
+    ports:
+      - 3000
+    volumes:
+      - ./nuxt:/app
+    depends_on:
+      - rails
     restart: always
 
   mysql:

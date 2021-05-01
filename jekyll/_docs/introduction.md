@@ -39,7 +39,8 @@ $ docker-compose up -d
 
 | URL | CONTAINER | 目的 |
 | :--- | :---: | ---- |
-| /api | rails | フロントとAPIのプロキシ |
+| / | nuxt | フロントエンド |
+| /api | rails | API |
 | /practice | jekyll | 開発ドキュメント |
 | /coverage | jekyll | SimpleCovのコードカバレッジ |
 

@@ -181,7 +181,7 @@ $(document).ready(function() {
 						"title": "Introduction",
 						"categories": "",
 						"url": " /docs/introduction",
-						"content": "Introduction\nこのプラクティスでは、仮想の案件を想定しながら作り進めていきます。\nあくまで開発方針を示すのが目的となるため、本番運用を想定した作りにはしていません。\n各種パスワードの管理には十分注意してください。\n\n必要なもの\n\n  docker-compose\n\n\n利用テクノロジー\n\n  Ruby on Rails\n  Jekyll\nドキュメンテーション\n\n\n起動方法\nサンプル用compose.envをコピーします。\n$ cp compose.env.example compose.env\n\nTMDbから各自規約を確認・同意の上APIキーを取得してください。\n取得できたらTMDB_API_KEYの項目に取得したAPIキーを設定します。\n$ vi compose.env\n\ndocker-composeを起動してください。\n$ docker-compose up -d\n\n\nポート・URLの割り当て\nアプリケーションはポート3001でNginxのプロキシが起動します。\nそのプロキシを通してURLを以下の通り振り分けます。\n\n\n  \n    \n      URL\n      CONTAINER\n      目的\n    \n  \n  \n    \n      /api\n      rails\n      フロントとAPIのプロキシ\n    \n    \n      /practice\n      jekyll\n      開発ドキュメント\n    \n    \n      /coverage\n      jekyll\n      SimpleCovのコードカバレッジ"
+						"content": "Introduction\nこのプラクティスでは、仮想の案件を想定しながら作り進めていきます。\nあくまで開発方針を示すのが目的となるため、本番運用を想定した作りにはしていません。\n各種パスワードの管理には十分注意してください。\n\n必要なもの\n\n  docker-compose\n\n\n利用テクノロジー\n\n  Ruby on Rails\n  Jekyll\nドキュメンテーション\n\n\n起動方法\nサンプル用compose.envをコピーします。\n$ cp compose.env.example compose.env\n\nTMDbから各自規約を確認・同意の上APIキーを取得してください。\n取得できたらTMDB_API_KEYの項目に取得したAPIキーを設定します。\n$ vi compose.env\n\ndocker-composeを起動してください。\n$ docker-compose up -d\n\n\nポート・URLの割り当て\nアプリケーションはポート3001でNginxのプロキシが起動します。\nそのプロキシを通してURLを以下の通り振り分けます。\n\n\n  \n    \n      URL\n      CONTAINER\n      目的\n    \n  \n  \n    \n      /\n      nuxt\n      フロントエンド\n    \n    \n      /api\n      rails\n      API\n    \n    \n      /practice\n      jekyll\n      開発ドキュメント\n    \n    \n      /coverage\n      jekyll\n      SimpleCovのコードカバレッジ"
 					}
 					
 				
@@ -207,7 +207,7 @@ $(document).ready(function() {
 						"title": "Requirements",
 						"categories": "",
 						"url": " /docs/requirements",
-						"content": "Requirements\n\n本システムにおける要件を明示する\n\n概要\n本システムはレンタルビデオ店 YEO で使用する業務システムである。\nレンタル品の商品及び在庫を管理する。\n\n商品\n\n  商品は現在のところ映画関連である。\n    \n      本システムの商品情報はTMDbの映画及び番組情報と連携して作成する\n        \n          なお、製品はTMDb APIを使用しているが、TMDbによって承認または認定されていない。\n        \n      \n      映画情報の詳細は規約により保存できないためマッシュアップを実装する。\n    \n  \n  将来的には本やCDの貸し出しに対応する可能性がある。\n\n\n貸出・返却\n\n  貸し出し・返却処理がおこなえる\n\n\n売上計上\n\n  売上金が形状される。"
+						"content": "Requirements\n\n本システムにおける要件を明示する\n\n概要\n本システムはレンタルビデオ店 YEO で使用する業務システムである。\nレンタル品の商品及び在庫を管理する。\n\n店舗\n\n  複数店舗を想定する\n\n\n認証\n\n  Auth0を利用し、JWTで行う\n\n\n商品\n\n  商品は現在のところ映画関連である。\n    \n      本システムの商品情報はTMDbの映画及び番組情報と連携して作成する\n        \n          なお、製品はTMDb APIを使用しているが、TMDbによって承認または認定されていない。\n        \n      \n      映画情報の詳細は規約により保存できないためマッシュアップを実装する。\n    \n  \n  将来的には本やCDの貸し出しに対応する可能性がある。\n\n\n貸出・返却\n\n  貸し出し・返却処理がおこなえる\n\n\n売上計上\n\n  売上金が形状される。"
 					}
 					
 				
@@ -274,7 +274,7 @@ $(document).ready(function() {
 						"title": "Yamamsa's Practice",
 						"categories": "",
 						"url": " /",
-						"content": "# Welcome to Yamamsa's Practice\n\nこのサイトは私の独断と偏見に基づくベストプラクティスをただただ晒すサイトです。\n\n## 目的\n複数人での開発を行うにあたって、スタンダードな考え方や実装方法はたくさんあります。\nしかし、細部に至っては、責任者がどう考えるかという\"決め\"が重要なことがすごく大事です。\nそこで、私とか関わる人たちが、私がどう考えるかを速やかにインプットして議論のたたき台とできるようにするため公開しています。\n\n## 免責\n- 教育目的のサイトではありません。\n- デファクトスタンダードを説明するサイトでもありません。\n- 教師とするも反面教師とするも好きにしてください。\n- 利用は自己責任でお願いします。\n\n## クレジット\n\n\n  \n    \n      \n    \n  \n  \n    仮想プロジェクトでは TMDbのAPIを使用ています。\n    この製品はTMDb APIを使用していますが、TMDbによって承認または認定されていません。\n    チュートリアルの利用にあたっては各自がAPIキーを取得し設定してください。"
+						"content": "# Welcome to Yamamsa's Practice\n\nこのサイトは私の独断と偏見に基づくベストプラクティスをただただ晒すサイトです。\n\n## 目的\n複数人での開発を行うにあたって、スタンダードな考え方や実装方法はたくさんあります。\nしかし、細部に至っては、責任者がどう考えるかという\"決め\"が重要なことがすごく大事です。\nそこで、私とか関わる人たちが、私がどう考えるかを速やかにインプットして議論のたたき台とできるようにするため公開しています。\n\n## 利用テクノロジー\n- Docker\n- Ruby on Rails\n- Nuxt\n\n## 免責\n- 教育目的のサイトではありません。\n- デファクトスタンダードを説明するサイトでもありません。\n- 教師とするも反面教師とするも好きにしてください。\n- 利用は自己責任でお願いします。\n\n## クレジット\n\n\n  \n    \n      \n    \n  \n  \n    仮想プロジェクトでは TMDbのAPIを使用ています。\n    この製品はTMDb APIを使用していますが、TMDbによって承認または認定されていません。\n    チュートリアルの利用にあたっては各自がAPIキーを取得し設定してください。"
 					}
 					
 				

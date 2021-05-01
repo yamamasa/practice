@@ -2,3 +2,5 @@ rails/vendor/
 rails/tmp/
 
 rails/coverage
+node_modules
+nuxt/node_modules
