@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Yamamasa’s Practice</title>
+    <description>Yamamasaの独断と偏見に基づくベストプラクティスをまとめるサイト
+</description>
+    <link>http://0.0.0.0:4000/</link>
+    <atom:link href="http://0.0.0.0:4000/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Fri, 30 Apr 2021 20:15:51 -0500</pubDate>
+    <lastBuildDate>Fri, 30 Apr 2021 20:15:51 -0500</lastBuildDate>
+    <generator>Jekyll v4.2.0</generator>
+    
+      <item>
+        <title>Welcome</title>
+        <description>&lt;p&gt;サイトを構築しました。&lt;/p&gt;
+</description>
+        <pubDate>Fri, 30 Apr 2021 19:00:00 -0500</pubDate>
+        <link>http://0.0.0.0:4000/2021/welcome/</link>
+        <guid isPermaLink="true">http://0.0.0.0:4000/2021/welcome/</guid>
+        
+        
+        <category>site</category>
+        
+        <category>update</category>
+        
+      </item>
+    
+  </channel>
+</rss>

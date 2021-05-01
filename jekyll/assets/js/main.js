@@ -1,3 +1,7 @@
+---
+exclude_in_search: true
+layout: null
+---
 (function($) {
     'use strict';
     $(function() {
@@ -45,7 +49,7 @@
                         return
                     }
                     var query = $(this).val();
-                    var searchPage = "http://0.0.0.0:4000/search/?q=" + query;
+                    var searchPage = "{{ site.url }}{{ site.baseurl }}/search/?q=" + query;
                     document.location = searchPage;
                     return false;
                 });
