@@ -23,19 +23,19 @@
 <link rel="icon" type="image/png" href="/practice/assets/favicons/android-144x144.png" sizes="144x144">
 <link rel="icon" type="image/png" href="/practice/assets/favicons/android-192x192.png"sizes="192x192">
 
-<title>Knowhow</title>
-<meta property="og:title" content="Knowhow" />
-<meta property="og:description" content="ノウハウ" />
+<title>階層データの取り扱い</title>
+<meta property="og:title" content="階層データの取り扱い" />
+<meta property="og:description" content="Introduction" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="http://0.0.0.0:4000" />
 <meta property="og:site_name" content="http://0.0.0.0:4000" />
 
-<meta itemprop="name" content="Knowhow">
-<meta itemprop="description" content="ノウハウ">
+<meta itemprop="name" content="階層データの取り扱い">
+<meta itemprop="description" content="Introduction">
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Knowhow"/>
-<meta name="twitter:description" content="ノウハウ"/>
+<meta name="twitter:title" content="階層データの取り扱い"/>
+<meta name="twitter:description" content="Introduction"/>
 
 <link rel="stylesheet" href="/practice/assets/css/main.css">
 <link rel="stylesheet" href="/practice/assets/css/palette.css">
@@ -64,6 +64,9 @@
 			</li>
 			<li class="nav-item mr-4 mb-2 mb-lg-0">
                             <a class="nav-link" href="/practice/docs" ><span>Documentation</span></a>
+			</li>
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+                            <a class="nav-link" href="/practice/knowhows" ><span>Knowhow</span></a>
 			</li>
 		</ul>
 	</div>
@@ -105,39 +108,65 @@ $(document).ready(function() {
       <div class="td-main">
         <div class="row flex-xl-nowrap">
           <div class="col-12 col-md-3 col-xl-2 td-sidebar d-print-none">
-          <div id="td-sidebar-menu" class="td-sidebar__inner">  
+          <div id="td-sidebar-menu" class="td-sidebar__inner">
   <form class="td-sidebar__search d-flex align-items-center">
  <input type="search" class="form-control td-search-input" placeholder="&#xf002 Search this site…" aria-label="Search this site…" autocomplete="off">
     <button class="btn btn-link td-sidebar__toggle d-md-none p-0 ml-3 fas fa-bars" type="button" data-toggle="collapse" data-target="#td-section-nav" aria-controls="td-docs-nav" aria-expanded="false" aria-label="Toggle section navigation">
     </button>
-  </form>  
+  </form>
   <nav class="collapse td-sidebar-nav pt-2 pl-4" id="td-section-nav">
-<ul class="td-sidebar-nav__section pr-md-3">
-  
-  
-  <li class="td-sidebar-nav__section-title">
-    <a  href="/practice/docs" class="align-left pl-0 pr-2 active td-sidebar-link td-sidebar-link__section">Documentation</a>
-  </li><ul>
-    <li class="collapse show" id="documentation">
-        <ul class="td-sidebar-nav__section pr-md-3">
-          <li class="td-sidebar-nav__section-title">
-            <a href="/practice/docs/introduction" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">Introduction</a>
-          </li>
-          
-          <li class="td-sidebar-nav__section-title">
-            <a href="/practice/docs/knowhow" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">Knowhow</a>
-          </li>
-          
-          <ul><li class="collapse show" id=""></li></ul>
-          <li class="td-sidebar-nav__section-title">
-            <a href="/practice/docs/requirements" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">Requirements</a>
-          </li>
-          
-          <li class="td-sidebar-nav__section-title">
-            <a href="/practice/news" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">News</a>
-          </li>
-          
-    </ul>
+    
+      <ul class="td-sidebar-nav__section pr-md-3">
+        
+        
+        <li class="td-sidebar-nav__section-title">
+          <a  href="/practice/docs" class="align-left pl-0 pr-2 active td-sidebar-link td-sidebar-link__section">Documentation</a>
+        </li>
+        
+          <ul>
+            <li class="collapse show" id="documentation">
+              
+                <li class="td-sidebar-nav__section-title">
+                  <a href="/practice/docs/introduction" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">概要</a>
+                </li>
+                
+              
+                <li class="td-sidebar-nav__section-title">
+                  <a href="/practice/docs/requirements" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">要件</a>
+                </li>
+                
+              
+            </li>
+          </ul>
+        
+      </ul>
+    
+      <ul class="td-sidebar-nav__section pr-md-3">
+        
+        
+        <li class="td-sidebar-nav__section-title">
+          <a  href="/practice/knowhows" class="align-left pl-0 pr-2 active td-sidebar-link td-sidebar-link__section">Knowhows</a>
+        </li>
+        
+          <ul>
+            <li class="collapse show" id="knowhows">
+              
+                <li class="td-sidebar-nav__section-title">
+                  <a href="/practice/knowhows/nested-tree" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">階層データの取扱</a>
+                </li>
+                
+                  <ul>
+                    <li class="collapse show" id="">
+                      
+                    </li>
+                  </ul>
+                
+              
+            </li>
+          </ul>
+        
+      </ul>
+    
   </nav>
 </div>
 
@@ -155,18 +184,38 @@ $(document).ready(function() {
               
               
                 <li class="breadcrumb-item">
-                  <a href="http://0.0.0.0:4000/practice/docs/">Documentation</a>
+                  <a href="http://0.0.0.0:4000/practice/knowhows/">Knowhows</a>
                 </li>
                 
                 <li class="breadcrumb-item active" aria-current="page">
-	          <a href="http://0.0.0.0:4000/practice/docs/knowhow">Knowhow</a>
+	          <a href="http://0.0.0.0:4000/practice/knowhows/nested-tree">階層データの取り扱い</a>
                 </li>
                 
 	      </ol>
            </nav>
            <div class="td-content">
-	      <h1 id="knowhow">Knowhow</h1>
-<p>一言の雑記</p>
+	      <h1 id="階層データの取り扱い">階層データの取り扱い</h1>
+
+<h2 id="概要">概要</h2>
+<p>通常の親子関係の設計であれば、parent_idといった形で親のIDを持つだけで完了する。<br />
+一方で、システムに置いて扱う階層構造は、カテゴリ、本支店関係、部署など、階層が明確に定義されていないことが多い。<br />
+この時に使えるのが”入れ子集合モデル”である。<br /></p>
+
+<h2 id="詳しい説明">詳しい説明</h2>
+<ul>
+  <li>https://gihyo.jp/dev/serial/01/sql_academy2/000501</li>
+</ul>
+
+<h2 id="注意点">注意点</h2>
+<ul>
+  <li>一覧などで気安く階層を遡ったりすると、負荷の低下をまねく</li>
+  <li>よく使うものはきちんと外部キーを持っておいたほうが良い</li>
+</ul>
+
+<h2 id="テクノロジー">テクノロジー</h2>
+<p>いろいろな言語プラットフォームで、入れ子集合モデルを取り扱うためのライブラリがある。
+私はRuby on Railsでは<a href="https://github.com/collectiveidea/awesome_nested_set" target="_blank">Awesome Nested Set</a>をよく使っている。</p>
+
 
 <script
   src="/practice/assets/js/jquery-3.3.1/jquery-3.3.1.min.js"

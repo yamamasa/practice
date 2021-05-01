@@ -56,7 +56,7 @@ services:
       - ./docs:/srv/jekyll/_site
     command: sh -c 'jekyll serve -s /usr/src/app --watch'
     ports:
-      - 4000
+      - 4000:4000
     restart: always
 volumes:
   mysql-data:

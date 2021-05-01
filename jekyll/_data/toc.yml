@@ -1,11 +1,15 @@
 - title: Documentation
   url: docs
   links:
-    - title: "Introduction"
+    - title: "概要"
       url: "docs/introduction"
-    - title: "Knowhow"
-      url: "docs/knowhow"
-    - title: "Requirements"
+    - title: "要件"
       url: "docs/requirements"
-    - title: "News"
-      url: "news"
+    # - title: "お知らせ"
+    #   url: "news"
+
+- title: Knowhows
+  url: "knowhows"
+  links:
+    - title: "階層データの取扱"
+      url: "knowhows/nested-tree"
