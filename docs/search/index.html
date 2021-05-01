@@ -124,19 +124,15 @@ $(document).ready(function() {
     <li class="collapse show" id="documentation">
         <ul class="td-sidebar-nav__section pr-md-3">
           <li class="td-sidebar-nav__section-title">
-            <a href="/docs/introduction" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">Introduction</a>
-          </li>
-          
-          <li class="td-sidebar-nav__section-title">
             <a href="/docs/getting-started" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">Getting Started</a>
           </li>
           
           <li class="td-sidebar-nav__section-title">
-            <a href="" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">Knowhow</a>
+            <a href="/docs/knowhow" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">Knowhow</a>
           </li>
           
           <li class="td-sidebar-nav__section-title">
-            <a href="/docs/extras" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">Project</a>
+            <a href="/docs/projects" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">Projects</a>
           </li>
           
           <li class="td-sidebar-nav__section-title">
@@ -198,7 +194,7 @@ $(document).ready(function() {
 						"title": "Get Started",
 						"categories": "",
 						"url": " /docs/getting-started",
-						"content": "Introduction\n必要なもの\n\n  docker\n  docker-compose\n  ruby on rails"
+						"content": "Introduction\n必要なもの\n\n  docker\n  docker-compose\n\n\n起動方法\ndocker-composeを起動してください。\n docker-compose up -d\n\n\nポート割り当て\n\n\n  \n    \n      PORT\n      CONTAINER\n      目的\n    \n  \n  \n    \n      3001\n      Ruby on Rails\n      API\n    \n    \n      4000\n      jekyll\n      ドキュメント"
 					}
 					
 				
@@ -206,12 +202,38 @@ $(document).ready(function() {
 				
 					,
 					
-					"docs-introduction": {
-						"id": "docs-introduction",
-						"title": "Introduction",
+					"docs-knowhow": {
+						"id": "docs-knowhow",
+						"title": "Knowhow",
 						"categories": "",
-						"url": " /docs/introduction",
-						"content": ""
+						"url": " /docs/knowhow",
+						"content": "Knowhow\n\n仮想プロジェクトに寄らないノウハウを記載します。"
+					}
+					
+				
+		
+				
+					,
+					
+					"docs-projects": {
+						"id": "docs-projects",
+						"title": "Projects",
+						"categories": "",
+						"url": " /docs/projects",
+						"content": "仮想プロジェクト\n\nこのプラクティスでは仮想プロジェクトを実際に作っていきます。"
+					}
+					
+				
+		
+				
+					,
+					
+					"docs-projects-yao": {
+						"id": "docs-projects-yao",
+						"title": "Projects",
+						"categories": "",
+						"url": " /docs/projects/yao",
+						"content": "仮想プロジェクト\n\nこのプラクティスでは仮想プロジェクトを実際に作っていきます。"
 					}
 					
 				
@@ -234,19 +256,6 @@ $(document).ready(function() {
 				
 					,
 					
-					"about": {
-						"id": "about",
-						"title": "About",
-						"categories": "",
-						"url": " /about/",
-						"content": "# About\n\nThis is a [starter template](https://vsoch.github.com/docsy-jekyll/) for a Docsy jekyll theme, based\non the Beautiful [Docsy](https://github.com/google/docsy) that renders with Hugo. This version is intended for\nnative deployment on GitHub pages. See the [respository]({{ site.repo }}) for more details.\n\n## Support\n\nIf you need help, please don't hesitate to [open an issue](https://www.github.com/{{ site.github_user }}/{{ site.github_repo }})."
-					}
-					
-				
-		
-				
-					,
-					
 					"archive": {
 						"id": "archive",
 						"title": "Articles",
@@ -265,7 +274,7 @@ $(document).ready(function() {
 						"title": "Documentation",
 						"categories": "",
 						"url": " /docs/",
-						"content": "# Documentation\n\nWelcome to the {{ site.title }} Documentation pages! Here you can quickly jump to a \nparticular page.\n\n\n    \n    {% for post in site.docs  %}        \n    \n    {{ post.title }}\n    {{ post.description }}\n    {% endfor %}"
+						"content": "# Documentation\n\n\n    \n    {% for post in site.docs  %}\n    \n    {{ post.title }}\n    {{ post.description }}\n    {% endfor %}"
 					}
 					
 				
@@ -288,7 +297,7 @@ $(document).ready(function() {
 					
 					"": {
 						"id": "",
-						"title": "Docsy Jekyll Theme",
+						"title": "Yamamsa's Practice",
 						"categories": "",
 						"url": " /",
 						"content": "# Welcome to Yamamsa's Practice\n\nこのサイトは私の独断と偏見に基づくベストプラクティスをただただ晒すサイトです。\n\n## 目的\n複数人での開発を行うにあたって、スタンダードな考え方や実装方法はたくさんあります。\nしかし、細部に至っては、やはり、責任者がどう考えるかということがすごく大事です。\nそこで、私とかかわる人たちが、私がどう考えるかを速やかにインプットできるようにするために公開しています。\n\n## 免責\n- 教育目的のサイトではありません。\n- スタンダードを説明するサイトでもありません。\n- 教師とするも反面教師とするも好きにしてください。\n- 利用は自己責任でお願いします。"

@@ -67,3 +67,5 @@ yarn-debug.log*
 !/storage/.keep
 
 compose.env
+
+jekyll/.jekyll-cache

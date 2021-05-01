@@ -1,16 +1,19 @@
 - title: Documentation
   url: docs
   links:
-    - title: "Introduction"
-      url: "docs/introduction"
     - title: "Getting Started"
       url: "docs/getting-started"
     - title: "Knowhow"
-    - title: "Project"
-      url: "docs/extras"
+      url: "docs/knowhow"
+    - title: "Projects"
+      url: "docs/projects"
       children:
-        - title: Quizzes
-          url: "docs/extras/example-quiz"
+        - title: Yao
+          url: "docs/projects/yao"
+          children:
+          - title: Yao
+            url: "docs/projects/yao"
+
         - title: Tags Page
           url: "tags"
     - title: "About"

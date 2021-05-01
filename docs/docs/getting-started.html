@@ -121,20 +121,16 @@ $(document).ready(function() {
     <li class="collapse show" id="documentation">
         <ul class="td-sidebar-nav__section pr-md-3">
           <li class="td-sidebar-nav__section-title">
-            <a href="/docs/introduction" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">Introduction</a>
-          </li>
-          
-          <li class="td-sidebar-nav__section-title">
             <a href="/docs/getting-started" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">Getting Started</a>
           </li>
           
           <ul><li class="collapse show" id=""></li></ul>
           <li class="td-sidebar-nav__section-title">
-            <a href="" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">Knowhow</a>
+            <a href="/docs/knowhow" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">Knowhow</a>
           </li>
           
           <li class="td-sidebar-nav__section-title">
-            <a href="/docs/extras" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">Project</a>
+            <a href="/docs/projects" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">Projects</a>
           </li>
           
           <li class="td-sidebar-nav__section-title">
@@ -187,8 +183,36 @@ $(document).ready(function() {
 <ul>
   <li>docker</li>
   <li>docker-compose</li>
-  <li>ruby on rails</li>
 </ul>
+
+<h2 id="起動方法">起動方法</h2>
+<p>docker-composeを起動してください。</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> docker-compose up -d
+</code></pre></div></div>
+
+<h2 id="ポート割り当て">ポート割り当て</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">PORT</th>
+      <th style="text-align: center">CONTAINER</th>
+      <th>目的</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">3001</td>
+      <td style="text-align: center">Ruby on Rails</td>
+      <td>API</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">4000</td>
+      <td style="text-align: center">jekyll</td>
+      <td>ドキュメント</td>
+    </tr>
+  </tbody>
+</table>
 
 <script
   src="/assets/js/jquery-3.3.1/jquery-3.3.1.min.js"

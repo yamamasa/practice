@@ -23,22 +23,19 @@
 <link rel="icon" type="image/png" href="/assets/favicons/android-144x144.png" sizes="144x144">
 <link rel="icon" type="image/png" href="/assets/favicons/android-192x192.png"sizes="192x192">
 
-<title>News</title>
-<meta property="og:title" content="News" />
-<meta property="og:description" content="Yamamasaの独断と偏見に基づくベストプラクティスをまとめるサイト
-" />
+<title>Projects</title>
+<meta property="og:title" content="Projects" />
+<meta property="og:description" content="仮想プロジェクト" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="http://0.0.0.0:4000" />
 <meta property="og:site_name" content="http://0.0.0.0:4000" />
 
-<meta itemprop="name" content="News">
-<meta itemprop="description" content="Yamamasaの独断と偏見に基づくベストプラクティスをまとめるサイト
-">
+<meta itemprop="name" content="Projects">
+<meta itemprop="description" content="仮想プロジェクト">
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="News"/>
-<meta name="twitter:description" content="Yamamasaの独断と偏見に基づくベストプラクティスをまとめるサイト
-"/>
+<meta name="twitter:title" content="Projects"/>
+<meta name="twitter:description" content="仮想プロジェクト"/>
 
 <link rel="stylesheet" href="/assets/css/main.css">
 <link rel="stylesheet" href="/assets/css/palette.css">
@@ -135,6 +132,9 @@ $(document).ready(function() {
             <a href="/docs/projects" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">Projects</a>
           </li>
           
+          <ul><li class="collapse show" id="">
+              <a class="td-sidebar-link td-sidebar-link__page " id="m-documentation-projects-yao" href="/docs/projects/yao">Yao</a><a class="td-sidebar-link td-sidebar-link__page " id="m-documentation-projects-tags-page" href="/tags">Tags Page</a>
+              </li></ul>
           <li class="td-sidebar-nav__section-title">
             <a href="/about" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">About</a>
           </li>
@@ -143,7 +143,6 @@ $(document).ready(function() {
             <a href="/news" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">News</a>
           </li>
           
-          <ul><li class="collapse show" id=""></li></ul>
     </ul>
   </nav>
 </div>
@@ -151,8 +150,8 @@ $(document).ready(function() {
           </div>
           <div class="d-none d-xl-block col-xl-2 td-toc d-print-none">
               <div class="td-page-meta ml-2 pb-1 pt-2 mb-0">
-                  <a href="https://github.com/yamamasa/practice//edit/main/pages/news.md" target="_blank"><i class="fa fa-edit fa-fw"></i> Edit this page</a>
-<a href="https://github.com/yamamasa/practice//issues/new?labels=question&title=Question:&body=Question on: https://github.com/yamamasa/practice//tree/master/pages/news.md" target="_blank"><i class="fab fa-github fa-fw"></i> Create documentation issue</a>
+                  <a href="https://github.com/yamamasa/practice//edit/main/_docs/projects/yao.md" target="_blank"><i class="fa fa-edit fa-fw"></i> Edit this page</a>
+<a href="https://github.com/yamamasa/practice//issues/new?labels=question&title=Question:&body=Question on: https://github.com/yamamasa/practice//tree/master/_docs/projects/yao.md" target="_blank"><i class="fab fa-github fa-fw"></i> Create documentation issue</a>
 <a href="https://github.com/yamamasa/practice//issues/new" target="_blank"><i class="fas fa-tasks fa-fw"></i> Create project issue</a>
 <!-- this will parse through the header fields and add a button to open
      an issue / ask a question on Github. The editable field should be in
@@ -170,31 +169,24 @@ $(document).ready(function() {
 	      <ol class="breadcrumb spb-1">
               
               
+                <li class="breadcrumb-item">
+                  <a href="http://0.0.0.0:4000/docs/">Documentation</a>
+                </li>
+                
+                <li class="breadcrumb-item">
+                  <a href="http://0.0.0.0:4000/docs/projects/">Projects</a>
+                </li>
+                
                 <li class="breadcrumb-item active" aria-current="page">
-	          <a href="http://0.0.0.0:4000/news/">News</a>
+	          <a href="http://0.0.0.0:4000/docs/projects/yao">Projects</a>
                 </li>
                 
 	      </ol>
            </nav>
            <div class="td-content">
-	      <h1 id="news">News</h1>
+	      <h1 id="仮想プロジェクト">仮想プロジェクト</h1>
 
-<p>Subscribe with <a href="/feed.xml">RSS</a> to keep up with the latest news.
-For site changes, see the <a href="https://github.com/yamamasa/practice/blob/master/CHANGELOG.md">changelog</a> kept with the code base.</p>
-
-<p><br /></p>
-
-<div class="post-preview">
-   <h2><a href="/2021/welcome/">Welcome</a></h2>
-   <span class="post-date">April 30, 2021</span><br />
-   
-   <p>サイトを構築しました。</p>
-
-   
-   </div>
-<hr />
-
-<p>Want to see more? See the <a href="/archive/">News Archive</a>.</p>
+<p>このプラクティスでは仮想プロジェクトを実際に作っていきます。</p>
 
 <script
   src="/assets/js/jquery-3.3.1/jquery-3.3.1.min.js"
@@ -245,7 +237,8 @@ $.each(headers, function(i, header){
 })
 </script>
 
-
+<script>
+$('h1').first().append('<div><span style="font-size:12px" class="badge badge-primary"><a style="cursor:pointer; color:white" href="http://0.0.0.0:4000/tags#project ">project</a></span></div>')</script>
 
 	
               
