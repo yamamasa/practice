@@ -40,7 +40,7 @@ permalink: /
 </div>
 <div class="row mt-4">
   <div class="col-12 col-md-2 text-center">
-    <a href="https://https://auth0.com//">
+    <a href="https://auth0.com/">
       <img src="https://cdn.auth0.com/website/bob/press/logo-dark.png" alt="auth0" title="auth0" style="width: 100%; max-width: 300px;">
     </a>
   </div>
