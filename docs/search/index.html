@@ -308,19 +308,6 @@ $(document).ready(function() {
 				
 					,
 					
-					"assets-js-main-js": {
-						"id": "assets-js-main-js",
-						"title": "",
-						"categories": "",
-						"url": " /assets/js/main.js",
-						"content": "(function($) {\n    'use strict';\n    $(function() {\n        $('[data-toggle=\"tooltip\"]').tooltip();\n        $('[data-toggle=\"popover\"]').popover();\n        $('.popover-dismiss').popover({\n            trigger: 'focus'\n        })\n    });\n\n    function bottomPos(element) {\n        return element.offset().top + element.outerHeight();\n    }\n    $(function() {\n        var promo = $(\".js-td-cover\");\n        if (!promo.length) {\n            return\n        }\n        var promoOffset = bottomPos(promo);\n        var navbarOffset = $('.js-navbar-scroll').offset().top;\n        var threshold = Math.ceil($('.js-navbar-scroll').outerHeight());\n        if ((promoOffset - navbarOffset) < threshold) {\n            $('.js-navbar-scroll').addClass('navbar-bg-onscroll');\n        }\n        $(window).on('scroll', function() {\n            var navtop = $('.js-navbar-scroll').offset().top - $(window).scrollTop();\n            var promoOffset = bottomPos($('.js-td-cover'));\n            var navbarOffset = $('.js-navbar-scroll').offset().top;\n            if ((promoOffset - navbarOffset) < threshold) {\n                $('.js-navbar-scroll').addClass('navbar-bg-onscroll');\n            } else {\n                $('.js-navbar-scroll').removeClass('navbar-bg-onscroll');\n                $('.js-navbar-scroll').addClass('navbar-bg-onscroll--fade');\n            }\n        });\n    });\n}(jQuery));\n(function($) {\n    'use strict';\n    var Search = {\n        init: function() {\n            $(document).ready(function() {\n                $(document).on('keypress', '.td-search-input', function(e) {\n                    if (e.keyCode !== 13) {\n                        return\n                    }\n                    var query = $(this).val();\n                    var searchPage = \"{{ site.url }}{{ site.baseurl }}/search/?q=\" + query;\n                    document.location = searchPage;\n                    return false;\n                });\n            });\n        },\n    };\n    Search.init();\n}(jQuery));"
-					}
-					
-				
-		
-				
-					,
-					
 					"news": {
 						"id": "news",
 						"title": "News",
