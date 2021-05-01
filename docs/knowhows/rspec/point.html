@@ -23,22 +23,19 @@
 <link rel="icon" type="image/png" href="/practice/assets/favicons/android-144x144.png" sizes="144x144">
 <link rel="icon" type="image/png" href="/practice/assets/favicons/android-192x192.png"sizes="192x192">
 
-<title>Yamamsa's Practice</title>
-<meta property="og:title" content="Yamamsa's Practice" />
-<meta property="og:description" content="Yamamasaの独断と偏見に基づくベストプラクティスをまとめるサイト
-" />
+<title>Rspec重要ポイント</title>
+<meta property="og:title" content="Rspec重要ポイント" />
+<meta property="og:description" content="Rspecの書き方の重要ポイント" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="http://0.0.0.0:4000" />
 <meta property="og:site_name" content="http://0.0.0.0:4000" />
 
-<meta itemprop="name" content="Yamamsa's Practice">
-<meta itemprop="description" content="Yamamasaの独断と偏見に基づくベストプラクティスをまとめるサイト
-">
+<meta itemprop="name" content="Rspec重要ポイント">
+<meta itemprop="description" content="Rspecの書き方の重要ポイント">
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Yamamsa's Practice"/>
-<meta name="twitter:description" content="Yamamasaの独断と偏見に基づくベストプラクティスをまとめるサイト
-"/>
+<meta name="twitter:title" content="Rspec重要ポイント"/>
+<meta name="twitter:description" content="Rspecの書き方の重要ポイント"/>
 
 <link rel="stylesheet" href="/practice/assets/css/main.css">
 <link rel="stylesheet" href="/practice/assets/css/palette.css">
@@ -163,6 +160,18 @@ $(document).ready(function() {
                 <li class="td-sidebar-nav__section-title">
                   <a href="/practice/knowhows/rspec" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">Rspec</a>
                   
+                    <ul>
+                      <li class="collapse show" id="">
+                        
+                          <ul>
+                            
+                              <li><a class="td-sidebar-link td-sidebar-link__page " id="m-knowhows-rspec-重要ポイント" href="/practice/knowhows/rspec/point">重要ポイント</a></li>
+                            
+                          </ul>
+                        
+                      </li>
+                    </ul>
+                  
               
             </li>
           </ul>
@@ -185,58 +194,45 @@ $(document).ready(function() {
 	      <ol class="breadcrumb spb-1">
               
               
+                <li class="breadcrumb-item">
+                  <a href="http://0.0.0.0:4000/practice/knowhows/">Knowhows</a>
+                </li>
+                
+                <li class="breadcrumb-item">
+                  <a href="http://0.0.0.0:4000/practice/knowhows/rspec/">Rspec</a>
+                </li>
+                
+                <li class="breadcrumb-item active" aria-current="page">
+	          <a href="http://0.0.0.0:4000/practice/knowhows/rspec/point">Rspec重要ポイント</a>
+                </li>
+                
 	      </ol>
            </nav>
            <div class="td-content">
-	      <h1 id="welcome-to-yamamsas-practice">Welcome to Yamamsa’s Practice</h1>
+	      <h1 id="重要ポイント">重要ポイント</h1>
 
-<p>このサイトは私の独断と偏見に基づくベストプラクティスをただただ晒すサイトです。</p>
+<h3 id="一度に多くをテストしない">一度に多くをテストしない</h3>
+<p>いろんなことをまとめてテストすると、こけた原因がわかりにくくなるので、一つずつテストする。</p>
 
-<h2 id="目的">目的</h2>
-<p>複数人での開発を行うにあたって、スタンダードな考え方や実装方法はたくさんあります。<br />
-しかし、細部に至っては、責任者がどう考えるかという”決め”が重要なことがすごく大事です。<br />
-そこで、私とか関わる人たちが、私がどう考えるかを速やかにインプットして議論のたたき台とできるようにするため公開しています。<br /></p>
+<h3 id="必要なテストを着実にする">必要なテストを着実にする</h3>
+<p>Rspecはブラックボックステストではないので、実装から想定しうる挙動はテストする必要があるが、過剰なテストは不要</p>
 
-<h2 id="利用テクノロジー">利用テクノロジー</h2>
+<h3 id="何をテストしているのか意識する">何をテストしているのか意識する</h3>
+<p>このテストケースはこういう不具合やデグレを考慮している。という意識を常に持ちながら書く。</p>
+
+<h3 id="バグを仕込んでみる">バグを仕込んでみる</h3>
+<p>テストが一通りかけたら、わざとプロダクトコードにバグを仕込んでみよう。それでテストが失敗すればよいテスト。逆に、どうやってもコケさせられないテストは不要なテスト</p>
 <ul>
-  <li>Docker</li>
-  <li>Ruby on Rails</li>
-  <li>Nuxt</li>
+  <li>値の代入先を間違える</li>
+  <li>条件判定が逆(ORとAND)</li>
+  <li>ifの条件が違う</li>
 </ul>
 
-<h2 id="免責">免責</h2>
+<h3 id="letとletやcreateとbuildの違いを意識して書く">letとlet!やcreateとbuildの違いを意識して書く</h3>
 <ul>
-  <li>教育目的のサイトではありません。</li>
-  <li>デファクトスタンダードを説明するサイトでもありません。</li>
-  <li>教師とするも反面教師とするも好きにしてください。</li>
-  <li>利用は自己責任でお願いします。</li>
+  <li>letは初めて変数が呼び出されたら動く。let!はすぐ動く。つまりデータの挙動が変わる。</li>
+  <li>createはDBに登録してしまうので、SQLが流れる。buildは保存前。つまり、保存しなくてもテストできるものはbuildでやる。これは、テストが増えてきたときのパフォーマンスに影響する。</li>
 </ul>
-
-<h2 id="クレジット">クレジット</h2>
-
-<div class="row">
-  <div class="col-12 col-md-2 text-center">
-    <a href="https://www.themoviedb.org/">
-      <img src="https://www.themoviedb.org/assets/2/v4/logos/v2/blue_long_1-8ba2ac31f354005783fab473602c34c3f4fd207150182061e425d366e4f34596.svg" alt="TMDb" title="TMDb" style="width: 100%; max-width: 300px;" />
-    </a>
-  </div>
-  <div class="col-12 col-md-10">
-    仮想プロジェクトでは <a href="https://www.themoviedb.org/">TMDb</a>のAPIを使用しています。<br />
-    この製品はTMDb APIを使用していますが、TMDbによって承認または認定されていません。<br />
-    チュートリアルの利用にあたっては各自がAPIキーを取得し設定してください。
-  </div>
-</div>
-<div class="row mt-4">
-  <div class="col-12 col-md-2 text-center">
-    <a href="https://https://auth0.com//">
-      <img src="https://cdn.auth0.com/website/bob/press/logo-dark.png" alt="auth0" title="auth0" style="width: 100%; max-width: 300px;" />
-    </a>
-  </div>
-  <div class="col-12 col-md-10">
-    認証に<a href="https://auth0.com/">Auth0</a>を使用しています。<br />
-    このサービスは有料です。課金管理にご注意ください。
-  </div>
-</div>
 
 <script
   src="/practice/assets/js/jquery-3.3.1/jquery-3.3.1.min.js"
@@ -287,7 +283,8 @@ $.each(headers, function(i, header){
 })
 </script>
 
-
+<script>
+$('h1').first().append('<div></div>')</script>
 
 
               
