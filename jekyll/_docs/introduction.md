@@ -19,18 +19,32 @@ description: Introduction
   ドキュメンテーション
 
 ## 起動方法
-サンプル用compose.envをコピーします。
+### compose.envの作成
+サンプルをコピーして必要な内容を設定してください。
 ```bash
-$ cp compose.env.example compose.env
+$ cp compose.env.sample compose.env
 ```
 <a href="https://www.themoviedb.org/">TMDb</a>から各自規約を確認・同意の上APIキーを取得してください。<br />
 取得できたらTMDB_API_KEYの項目に取得したAPIキーを設定します。
 ```bash
 $ vi compose.env
 ```
+
+### Nuxt用Envの編集
+サンプルをコピーして設定してください。
+<a href="https://auth0.com/">auth0</a>の認証情報が必要です。
+```
+$ cp nuxt/.env.sample nuxt/.env
+$ vi nuxt/.env
+```
+
+### Docker Compose の 起動
 docker-composeを起動してください。
 ```bash
-$ docker-compose up -d
+$ docker-compose run --rm rake db:create
+$ docker-compose run --rm rake db:migrate
+$ docker-compose run --rm rake db:seed_fu
+$ docker-compose up -d --build
 ```
 
 ## ポート・URLの割り当て

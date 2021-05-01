@@ -212,15 +212,28 @@ $(document).ready(function() {
 </ul>
 
 <h2 id="起動方法">起動方法</h2>
-<p>サンプル用compose.envをコピーします。</p>
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">cp </span>compose.env.example compose.env
+<h3 id="composeenvの作成">compose.envの作成</h3>
+<p>サンプルをコピーして必要な内容を設定してください。</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">cp </span>compose.env.sample compose.env
 </code></pre></div></div>
 <p><a href="https://www.themoviedb.org/">TMDb</a>から各自規約を確認・同意の上APIキーを取得してください。<br />
 取得できたらTMDB_API_KEYの項目に取得したAPIキーを設定します。</p>
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>vi compose.env
 </code></pre></div></div>
+
+<h3 id="nuxt用envの編集">Nuxt用Envの編集</h3>
+<p>サンプルをコピーして設定してください。
+<a href="https://auth0.com/">auth0</a>の認証情報が必要です。</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ cp nuxt/.env.sample nuxt/.env
+$ vi nuxt/.env
+</code></pre></div></div>
+
+<h3 id="docker-compose-の-起動">Docker Compose の 起動</h3>
 <p>docker-composeを起動してください。</p>
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>docker-compose up <span class="nt">-d</span>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>docker-compose run <span class="nt">--rm</span> rake db:create
+<span class="nv">$ </span>docker-compose run <span class="nt">--rm</span> rake db:migrate
+<span class="nv">$ </span>docker-compose run <span class="nt">--rm</span> rake db:seed_fu
+<span class="nv">$ </span>docker-compose up <span class="nt">-d</span> <span class="nt">--build</span>
 </code></pre></div></div>
 
 <h2 id="ポートurlの割り当て">ポート・URLの割り当て</h2>
