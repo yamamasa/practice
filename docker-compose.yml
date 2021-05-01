@@ -8,11 +8,11 @@ services:
       - 3001:80
     volumes:
       - ./rails/coverage:/app/coverage
+    restart: always
     depends_on:
       - rails
       - nuxt
-    restart: always
-
+      - jekyll
   rails:
     build:
       context: ./
