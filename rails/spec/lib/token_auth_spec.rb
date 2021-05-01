@@ -34,4 +34,6 @@ describe TokenAuth do
       end
     end
   end
+
+  pending 'current_accountのテスト記述'
 end
