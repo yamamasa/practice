@@ -7,9 +7,8 @@ description: Introduction
 
 # Introduction
 このプラクティスでは、仮想の案件を想定しながら作り進めていきます。
-
-## 想定案件
-某所にあるレンタルビデオ店YEOの在庫管理システムを想定します。
+あくまで開発方針を示すのが目的となるため、本番運用を想定した作りにはしていません。
+各種パスワードの管理には十分注意してください。
 
 ## 必要なもの
 - docker-compose
@@ -20,14 +19,27 @@ description: Introduction
   ドキュメンテーション
 
 ## 起動方法
+サンプル用compose.envをコピーします。
+```bash
+$ cp compose.env.example compose.env
+```
+<a href="https://www.themoviedb.org/">TMDb</a>から各自規約を確認・同意の上APIキーを取得してください。<br />
+取得できたらTMDB_API_KEYの項目に取得したAPIキーを設定します。
+```bash
+$ vi compose.env
+```
 docker-composeを起動してください。
-```
- docker-compose up -d
+```bash
+$ docker-compose up -d
 ```
 
-## ポート割り当て
+## ポート・URLの割り当て
+アプリケーションはポート3001でNginxのプロキシが起動します。
+そのプロキシを通してURLを以下の通り振り分けます。
 
-| PORT | CONTAINER | 目的 |
-| :---: | :---: | ---- |
-| 3001 | Proxy | フロントとAPIのプロキシ |
-| 4000 | jekyll | ドキュメント |
+| URL | CONTAINER | 目的 |
+| :--- | :---: | ---- |
+| /api | rails | フロントとAPIのプロキシ |
+| /practice | jekyll | 開発ドキュメント |
+| /coverage | jekyll | SimpleCovのコードカバレッジ |
+

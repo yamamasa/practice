@@ -129,7 +129,7 @@ $(document).ready(function() {
           </li>
           
           <li class="td-sidebar-nav__section-title">
-            <a href="/practice/docs/requirements" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">要件</a>
+            <a href="/practice/docs/requirements" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">Requirements</a>
           </li>
           
           <ul><li class="collapse show" id=""></li></ul>
@@ -169,17 +169,34 @@ $(document).ready(function() {
 
 <p>本システムにおける要件を明示する</p>
 
-<h2 id="商品データ">商品データ</h2>
+<h2 id="概要">概要</h2>
+<p>本システムはレンタルビデオ店 YEO で使用する業務システムである。
+レンタル品の商品及び在庫を管理する。</p>
+
+<h3 id="商品">商品</h3>
 <ul>
-  <li>本システムの商品情報は(TMDb)[https://www.themoviedb.org/]の映画及び番組情報と連携して作成する
+  <li>商品は現在のところ映画関連である。
     <ul>
-      <li>なお、製品はTMDb APIを使用しているが、TMDbによって承認または認定されていない。</li>
+      <li>本システムの商品情報は<a href="https://www.themoviedb.org/">TMDb</a>の映画及び番組情報と連携して作成する
+        <ul>
+          <li>なお、製品はTMDb APIを使用しているが、TMDbによって承認または認定されていない。</li>
+        </ul>
+      </li>
+      <li>映画情報の詳細は規約により保存できないためマッシュアップを実装する。</li>
     </ul>
   </li>
+  <li>将来的には本やCDの貸し出しに対応する可能性がある。</li>
 </ul>
 
-<p>https://www.themoviedb.org/documentation/api
-一言の雑記</p>
+<h3 id="貸出返却">貸出・返却</h3>
+<ul>
+  <li>貸し出し・返却処理がおこなえる</li>
+</ul>
+
+<h3 id="売上計上">売上計上</h3>
+<ul>
+  <li>売上金が形状される。</li>
+</ul>
 
 <script
   src="/practice/assets/js/jquery-3.3.1/jquery-3.3.1.min.js"
@@ -246,8 +263,8 @@ $('h1').first().append('<div></div>')</script>
   <div class="container-fluid mx-sm-5">
     <div class="row">
       <div class="col-6 col-sm-4 text-xs-center order-sm-2">
-        
-<ul class="list-inline mb-0">  
+
+<ul class="list-inline mb-0">
   
   <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="" aria-label="Twitter" data-original-title="Twitter">
     <a class="text-white" target="_blank" href="https://twitter.com/yamamasa">
@@ -258,7 +275,7 @@ $('h1').first().append('<div></div>')</script>
 </ul>
 </div>
 <div class="col-6 col-sm-4 text-right text-xs-center order-sm-3">
-<ul class="list-inline mb-0">  
+<ul class="list-inline mb-0">
   <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="" aria-label="GitHub" data-original-title="GitHub">
     <a class="text-white" target="_blank" href="https://github.com/yamamasa/practice/">
       <i class="fab fa-github"></i>
@@ -267,9 +284,11 @@ $('h1').first().append('<div></div>')</script>
 </ul>
 </div>
 <div class="col-12 col-sm-4 text-center py-2 order-sm-2">
-  <small class="text-white">© 2019 yamamasa All Rights Reserved</small>
-  
-  <p class="mt-2"><a href="/about/">About Docsy</a></p>	
+  <small class="text-white">© 2021 yamamasa All Rights Reserved</small>
+      
+        <!--
+          <p class="mt-2"><a href="/about/">About Docsy</a></p>
+        -->
       </div>
     </div>
   </div>

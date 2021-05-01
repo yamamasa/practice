@@ -130,7 +130,7 @@ $(document).ready(function() {
           </li>
           
           <li class="td-sidebar-nav__section-title">
-            <a href="/practice/docs/requirements" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">要件</a>
+            <a href="/practice/docs/requirements" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">Requirements</a>
           </li>
           
           <li class="td-sidebar-nav__section-title">
@@ -166,10 +166,9 @@ $(document).ready(function() {
            </nav>
            <div class="td-content">
 	      <h1 id="introduction">Introduction</h1>
-<p>このプラクティスでは、仮想の案件を想定しながら作り進めていきます。</p>
-
-<h2 id="想定案件">想定案件</h2>
-<p>某所にあるレンタルビデオ店YEOの在庫管理システムを想定します。</p>
+<p>このプラクティスでは、仮想の案件を想定しながら作り進めていきます。
+あくまで開発方針を示すのが目的となるため、本番運用を想定した作りにはしていません。
+各種パスワードの管理には十分注意してください。</p>
 
 <h2 id="必要なもの">必要なもの</h2>
 <ul>
@@ -184,33 +183,48 @@ $(document).ready(function() {
 </ul>
 
 <h2 id="起動方法">起動方法</h2>
+<p>サンプル用compose.envをコピーします。</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">cp </span>compose.env.example compose.env
+</code></pre></div></div>
+<p><a href="https://www.themoviedb.org/">TMDb</a>から各自規約を確認・同意の上APIキーを取得してください。<br />
+取得できたらTMDB_API_KEYの項目に取得したAPIキーを設定します。</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>vi compose.env
+</code></pre></div></div>
 <p>docker-composeを起動してください。</p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> docker-compose up -d
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>docker-compose up <span class="nt">-d</span>
 </code></pre></div></div>
 
-<h2 id="ポート割り当て">ポート割り当て</h2>
+<h2 id="ポートurlの割り当て">ポート・URLの割り当て</h2>
+<p>アプリケーションはポート3001でNginxのプロキシが起動します。
+そのプロキシを通してURLを以下の通り振り分けます。</p>
 
 <table>
   <thead>
     <tr>
-      <th style="text-align: center">PORT</th>
+      <th style="text-align: left">URL</th>
       <th style="text-align: center">CONTAINER</th>
       <th>目的</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td style="text-align: center">3001</td>
-      <td style="text-align: center">Proxy</td>
+      <td style="text-align: left">/api</td>
+      <td style="text-align: center">rails</td>
       <td>フロントとAPIのプロキシ</td>
     </tr>
     <tr>
-      <td style="text-align: center">4000</td>
+      <td style="text-align: left">/practice</td>
       <td style="text-align: center">jekyll</td>
-      <td>ドキュメント</td>
+      <td>開発ドキュメント</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">/coverage</td>
+      <td style="text-align: center">jekyll</td>
+      <td>SimpleCovのコードカバレッジ</td>
     </tr>
   </tbody>
 </table>
+
 
 <script
   src="/practice/assets/js/jquery-3.3.1/jquery-3.3.1.min.js"
@@ -277,8 +291,8 @@ $('h1').first().append('<div></div>')</script>
   <div class="container-fluid mx-sm-5">
     <div class="row">
       <div class="col-6 col-sm-4 text-xs-center order-sm-2">
-        
-<ul class="list-inline mb-0">  
+
+<ul class="list-inline mb-0">
   
   <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="" aria-label="Twitter" data-original-title="Twitter">
     <a class="text-white" target="_blank" href="https://twitter.com/yamamasa">
@@ -289,7 +303,7 @@ $('h1').first().append('<div></div>')</script>
 </ul>
 </div>
 <div class="col-6 col-sm-4 text-right text-xs-center order-sm-3">
-<ul class="list-inline mb-0">  
+<ul class="list-inline mb-0">
   <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="" aria-label="GitHub" data-original-title="GitHub">
     <a class="text-white" target="_blank" href="https://github.com/yamamasa/practice/">
       <i class="fab fa-github"></i>
@@ -298,9 +312,11 @@ $('h1').first().append('<div></div>')</script>
 </ul>
 </div>
 <div class="col-12 col-sm-4 text-center py-2 order-sm-2">
-  <small class="text-white">© 2019 yamamasa All Rights Reserved</small>
-  
-  <p class="mt-2"><a href="/about/">About Docsy</a></p>	
+  <small class="text-white">© 2021 yamamasa All Rights Reserved</small>
+      
+        <!--
+          <p class="mt-2"><a href="/about/">About Docsy</a></p>
+        -->
       </div>
     </div>
   </div>

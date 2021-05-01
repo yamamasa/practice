@@ -18,3 +18,19 @@ permalink: /
 - デファクトスタンダードを説明するサイトでもありません。
 - 教師とするも反面教師とするも好きにしてください。
 - 利用は自己責任でお願いします。
+
+## クレジット
+
+<div class="row">
+  <div class="col-2 text-center">
+    <a href="https://www.themoviedb.org/">
+      <img src="https://www.themoviedb.org/assets/2/v4/logos/v2/blue_long_1-8ba2ac31f354005783fab473602c34c3f4fd207150182061e425d366e4f34596.svg" alt="TMDb" title="TMDb">
+    </a>
+  </div>
+  <div class="col-10">
+    仮想プロジェクトでは <a href="https://www.themoviedb.org/">TMDb</a>のAPIを使用ています。<br />
+    この製品はTMDb APIを使用していますが、TMDbによって承認または認定されていません。<br />
+    チュートリアルの利用にあたっては各自がAPIキーを取得し設定してください。
+  </div>
+
+</div>
