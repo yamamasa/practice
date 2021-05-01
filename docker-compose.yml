@@ -11,6 +11,7 @@ services:
     depends_on:
       - rails
     restart: always
+
   rails:
     build:
       context: ./
@@ -32,6 +33,16 @@ services:
     volumes:
       - mysql-data:/var/lib/mysql
     restart: always
+
+  jekyll:
+    image: jekyll/jekyll
+    volumes:
+      - ./doc:/usr/src/app
+    command: sh -c 'jekyll serve -s /usr/src/app --watch'
+    ports:
+      - 4000:4000
+    restart: always
+
 volumes:
   mysql-data:
     driver: local

@@ -1,0 +1,18 @@
+- title: Documentation
+  url: docs
+  links:
+    - title: "Introduction"
+      url: "docs/introduction"
+    - title: "Getting Started"
+      url: "docs/getting-started"
+    - title: "Extras"
+      url: "docs/extras"
+      children:
+        - title: Quizzes
+          url: "docs/extras/example-quiz"
+        - title: Tags Page
+          url: "tags"
+    - title: "About"
+      url: "about"
+    - title: "News"
+      url: "news"
