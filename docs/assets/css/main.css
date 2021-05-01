@@ -18069,7 +18069,9 @@ html body .md-typeset .headerlink {
     padding: 0;
     margin: 0
 }
-
+.td-sidebar-nav__section ul > li > ul {
+    padding-left: .5rem;
+}
 @media(min-width:768px) {
     .td-sidebar-nav__section>ul {
         padding-left: .5rem

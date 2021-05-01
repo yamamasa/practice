@@ -23,22 +23,19 @@
 <link rel="icon" type="image/png" href="/practice/assets/favicons/android-144x144.png" sizes="144x144">
 <link rel="icon" type="image/png" href="/practice/assets/favicons/android-192x192.png"sizes="192x192">
 
-<title>Yamamsa's Practice</title>
-<meta property="og:title" content="Yamamsa's Practice" />
-<meta property="og:description" content="Yamamasaの独断と偏見に基づくベストプラクティスをまとめるサイト
-" />
+<title>Rspec</title>
+<meta property="og:title" content="Rspec" />
+<meta property="og:description" content="Rspecの書き方" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="http://0.0.0.0:4000" />
 <meta property="og:site_name" content="http://0.0.0.0:4000" />
 
-<meta itemprop="name" content="Yamamsa's Practice">
-<meta itemprop="description" content="Yamamasaの独断と偏見に基づくベストプラクティスをまとめるサイト
-">
+<meta itemprop="name" content="Rspec">
+<meta itemprop="description" content="Rspecの書き方">
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Yamamsa's Practice"/>
-<meta name="twitter:description" content="Yamamasaの独断と偏見に基づくベストプラクティスをまとめるサイト
-"/>
+<meta name="twitter:title" content="Rspec"/>
+<meta name="twitter:description" content="Rspecの書き方"/>
 
 <link rel="stylesheet" href="/practice/assets/css/main.css">
 <link rel="stylesheet" href="/practice/assets/css/palette.css">
@@ -163,6 +160,18 @@ $(document).ready(function() {
                 <li class="td-sidebar-nav__section-title">
                   <a href="/practice/knowhows/rspec" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">Rspec</a>
                   
+                    <ul>
+                      <li class="collapse show" id="">
+                        
+                          <ul>
+                            
+                              <li><a class="td-sidebar-link td-sidebar-link__page " id="m-knowhows-rspec-重要ポイント" href="/practice/knowhows/rspec/point">重要ポイント</a></li>
+                            
+                          </ul>
+                        
+                      </li>
+                    </ul>
+                  
               
             </li>
           </ul>
@@ -185,58 +194,53 @@ $(document).ready(function() {
 	      <ol class="breadcrumb spb-1">
               
               
+                <li class="breadcrumb-item">
+                  <a href="http://0.0.0.0:4000/practice/knowhows/">Knowhows</a>
+                </li>
+                
+                <li class="breadcrumb-item active" aria-current="page">
+	          <a href="http://0.0.0.0:4000/practice/knowhows/rspec">Rspec</a>
+                </li>
+                
 	      </ol>
            </nav>
            <div class="td-content">
-	      <h1 id="welcome-to-yamamsas-practice">Welcome to Yamamsa’s Practice</h1>
+	      <h1 id="rspecの記述">Rspecの記述</h1>
 
-<p>このサイトは私の独断と偏見に基づくベストプラクティスをただただ晒すサイトです。</p>
+<h2 id="概要">概要</h2>
+<p>Ruby on Railsのテストコード記述のためのノウハウをまとめる。
+<br /></p>
 
-<h2 id="目的">目的</h2>
-<p>複数人での開発を行うにあたって、スタンダードな考え方や実装方法はたくさんあります。<br />
-しかし、細部に至っては、責任者がどう考えるかという”決め”が重要なことがすごく大事です。<br />
-そこで、私とか関わる人たちが、私がどう考えるかを速やかにインプットして議論のたたき台とできるようにするため公開しています。<br /></p>
-
-<h2 id="利用テクノロジー">利用テクノロジー</h2>
+<h2 id="はじめに">はじめに</h2>
 <ul>
-  <li>Docker</li>
-  <li>Ruby on Rails</li>
-  <li>Nuxt</li>
+  <li><a href="https://github.com/thoughtbot/factory_bot">factory_bot</a></li>
+  <li>テスト用のデータ作成が超絶楽になる。</li>
+  <li>
+    <p>詳しい使い方は<a href="https://github.com/thoughtbot/factory_bot/blob/master/GETTING_STARTED.md">こちら</a>自動翻訳でもある程度読めるので見ておくとい</p>
+  </li>
+  <li><a href="https://github.com/ffaker/ffaker/blob/main/REFERENCE.md">FFaker</a></li>
+  <li>それっぽいテストデータが作れる。</li>
+  <li>パターン数に限りがあるので、ユニーク制約がかかる場所に使ってはいけない。(FactoryBotのsequence使う)</li>
+  <li><a href="https://github.com/guard/guard-rspec">Guard</a>
+    <ul>
+      <li>起動しておくと、ファイル保存でRspecを実行してくれる。</li>
+      <li>緑がどんどん増えていくのが癖になる</li>
+    </ul>
+  </li>
+  <li><a href="https://github.com/simplecov-ruby/simplecov">Simplecov</a>
+    <ul>
+      <li>テストカバレッジを表示</li>
+    </ul>
+  </li>
 </ul>
 
-<h2 id="免責">免責</h2>
+<h2 id="心構え">心構え</h2>
 <ul>
-  <li>教育目的のサイトではありません。</li>
-  <li>デファクトスタンダードを説明するサイトでもありません。</li>
-  <li>教師とするも反面教師とするも好きにしてください。</li>
-  <li>利用は自己責任でお願いします。</li>
+  <li>Rspecは楽しく書けないと続かない。</li>
+  <li>そういう意味で便利ツールはどんどん使う。</li>
+  <li>重箱の隅突っついていく</li>
 </ul>
 
-<h2 id="クレジット">クレジット</h2>
-
-<div class="row">
-  <div class="col-12 col-md-2 text-center">
-    <a href="https://www.themoviedb.org/">
-      <img src="https://www.themoviedb.org/assets/2/v4/logos/v2/blue_long_1-8ba2ac31f354005783fab473602c34c3f4fd207150182061e425d366e4f34596.svg" alt="TMDb" title="TMDb" style="width: 100%; max-width: 300px;" />
-    </a>
-  </div>
-  <div class="col-12 col-md-10">
-    仮想プロジェクトでは <a href="https://www.themoviedb.org/">TMDb</a>のAPIを使用しています。<br />
-    この製品はTMDb APIを使用していますが、TMDbによって承認または認定されていません。<br />
-    チュートリアルの利用にあたっては各自がAPIキーを取得し設定してください。
-  </div>
-</div>
-<div class="row mt-4">
-  <div class="col-12 col-md-2 text-center">
-    <a href="https://https://auth0.com//">
-      <img src="https://cdn.auth0.com/website/bob/press/logo-dark.png" alt="auth0" title="auth0" style="width: 100%; max-width: 300px;" />
-    </a>
-  </div>
-  <div class="col-12 col-md-10">
-    認証に<a href="https://auth0.com/">Auth0</a>を使用しています。<br />
-    このサービスは有料です。課金管理にご注意ください。
-  </div>
-</div>
 
 <script
   src="/practice/assets/js/jquery-3.3.1/jquery-3.3.1.min.js"
@@ -287,7 +291,8 @@ $.each(headers, function(i, header){
 })
 </script>
 
-
+<script>
+$('h1').first().append('<div></div>')</script>
 
 
               

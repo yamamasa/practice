@@ -2,7 +2,7 @@ require:
   - rubocop-rails
   - rubocop-rspec
 AllCops:
-  TargetRubyVersion: 3.0
+  TargetRubyVersion: 3.0.1
   NewCops: enable
 Rails:
   Enabled: true
@@ -25,3 +25,31 @@ Metrics/BlockLength:
     - 'Guardfile'
     - 'spec/*'
     - 'spec/**/*'
+
+# 文字列フォーマットはパーセント表記
+FormatString:
+  EnforcedStyle: percent
+
+# クラス内のクラスなどを定義する際の形式の強制無効
+ClassAndModuleChildren:
+  Enabled: false
+
+# Rspecのexampleの数を制限しない
+RSpec/ExampleLength:
+  Enabled: false
+
+# 複数行のテストがかける
+RSpec/MultipleExpectations:
+  Enabled: false
+
+# ワードを制限しない
+RSpec/ContextWording:
+  Enabled: false
+
+# let!をつかるようにする
+RSpec/LetSetup:
+  Enabled: false
+
+# ネストの深さを制限しない
+RSpec/NestedGroups:
+  Enabled: false
