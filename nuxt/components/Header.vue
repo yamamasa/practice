@@ -45,14 +45,15 @@ export default {
     famlyName() {
       // return this.$auth.loggedIn ? this.$auth.$state.user.nickname : 'ゲスト'
     },
-
   },
   methods: {
     login() {
       this.$auth.loginWith('auth0')
     },
-    logout() {
+    async logout() {
       this.$auth.logout();
+      const returnTo = encodeURIComponent(this.$config.baseURL)
+      location.href = `https://${this.$config.auth0Domain}/v2/logout?returnTo=${returnTo}&client_id=${this.$config.auth0ClientId}`
     }
   }
 };

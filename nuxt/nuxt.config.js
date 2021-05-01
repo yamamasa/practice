@@ -6,8 +6,11 @@ export default {
   target: 'static',
 
   publicRuntimeConfig: {
-    baseURL: process.env.BASE_URL || 'http://locahost:3000',
-    apiURL: process.env.API_URL || 'http://localhost:3333'
+    baseURL: process.env.BASE_URL,
+    apiURL: process.env.API_URL,
+    auth0Domain: process.env.AUTH0_DOMAIN,
+    auth0ClientId: process.env.AUTH0_CLIENT_ID
+
   },
 
   // Global page headers: https://go.nuxtjs.dev/config-head
@@ -89,7 +92,10 @@ export default {
         client_id: process.env.AUTH0_CLIENT_ID,
         response_type: 'id_token',
         token_key: 'id_token',
-        userinfo_endpoint: false
+        userinfo_endpoint: false,
+        endpoints: {
+          logout: `https://${process.env.AUTH0_DOMAIN}/v2/logout`
+        }
       },
     },
     redirect: {

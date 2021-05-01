@@ -29,8 +29,12 @@ module Practice
     # These settings can be overridden in specific environments using the files
     # in config/environments, which are processed later.
     #
-    # config.time_zone = "Central Time (US & Canada)"
-    # config.eager_load_paths << Rails.root.join("extras")
+    config.time_zone = 'Asia/Tokyo'
+
+    config.i18n.default_locale = :ja
+
+    # 開発中のみ、libの下も適宜読み込む
+    config.eager_load_paths += [Rails.root.join('lib')] if Rails.env.development?
 
     # Only loads a smaller set of middleware suitable for API only apps.
     # Middleware like session, flash, cookies can be added back manually.

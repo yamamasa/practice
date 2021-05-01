@@ -225,6 +225,12 @@ axiosとの連動は<a href="https://tech.smartcamp.co.jp/entry/auth0-jwt">Auth0
 
 <h3 id="rails-への導入">Rails への導入</h3>
 <p><a href="https://github.com/auth0/ruby-auth0">Auth0 Ruby</a>でいけた</p>
+<h4 id="はまりどころ">はまりどころ</h4>
+<ul>
+  <li>Auth0のライブラリでID Tokenのチェックをする際に、フロント側同じアプリを使ったらエラーではまった。</li>
+  <li>Applications -&gt; APIsから、 Machine to Machine Applicationsを作成の上、create:client_grantsの認証を通す必要がある。</li>
+  <li>チェックの時のaudienceはフロントで使ってるアプリケーションのCLIENT_IDになるので注意</li>
+</ul>
 
 <h4 id="参考ページ-1">参考ページ</h4>
 <ul>

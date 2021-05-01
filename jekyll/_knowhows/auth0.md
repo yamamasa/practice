@@ -24,6 +24,10 @@ axiosとの連動は[Auth0でJWT認証してみた話 - SMARTCAMP Engineer Blog]
 
 ### Rails への導入
 [Auth0 Ruby](https://github.com/auth0/ruby-auth0)でいけた
+#### はまりどころ
+- Auth0のライブラリでID Tokenのチェックをする際に、フロント側同じアプリを使ったらエラーではまった。
+- Applications -> APIsから、 Machine to Machine Applicationsを作成の上、create:client_grantsの認証を通す必要がある。
+- チェックの時のaudienceはフロントで使ってるアプリケーションのCLIENT_IDになるので注意
 
 #### 参考ページ
  - [Auth0でJWT認証してみた話 - SMARTCAMP Engineer Blog](https://tech.smartcamp.co.jp/entry/auth0-jwt)
