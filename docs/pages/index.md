@@ -1,12 +1,11 @@
 ---
-title: Introduction
-tags:
- - introduction
-description: このサイトの目的を説明
+layout: page
+title: Docsy Jekyll Theme
+permalink: /
 ---
 
-# Introduction
-## はじめに
+# Welcome to Yamamsa's Practice
+
 このサイトは私の独断と偏見に基づくベストプラクティスをただただ晒すサイトです。
 
 ## 目的

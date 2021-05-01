@@ -2,7 +2,7 @@
 title: Get Started
 tags:
  -
-description: このサイトの目的を説明
+description: スタート
 ---
 
 # Introduction

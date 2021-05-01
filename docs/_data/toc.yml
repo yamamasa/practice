@@ -5,7 +5,8 @@
       url: "docs/introduction"
     - title: "Getting Started"
       url: "docs/getting-started"
-    - title: "Extras"
+    - title: "Knowhow"
+    - title: "Project"
       url: "docs/extras"
       children:
         - title: Quizzes

@@ -37,7 +37,7 @@ services:
   jekyll:
     image: jekyll/jekyll
     volumes:
-      - ./doc:/usr/src/app
+      - ./docs:/usr/src/app
     command: sh -c 'jekyll serve -s /usr/src/app --watch'
     ports:
       - 4000:4000
