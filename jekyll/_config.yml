@@ -20,7 +20,7 @@ description: > # this means to ignore newlines until "baseurl:"
   Yamamasaの独断と偏見に基づくベストプラクティスをまとめるサイト
 
 # DO NOT CHANGE THE LINE OF THIS FILE without editing .circleci/circle_urls.sh
-# baseurl: "/docsy-jekyll" # the subpath of your site, e.g. /blog
+baseurl: "/practice" # the subpath of your site, e.g. /blog
 
 # This is mostly for testing
 url: "https://yamamasa.github.io/practice/" # the base hostname & protocol for your site
@@ -88,6 +88,7 @@ defaults:
     values:
       layout: "post"
 
-
+# google analytics
+google_analytics:
 # development
 host: 0.0.0.0
