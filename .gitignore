@@ -70,4 +70,6 @@ compose.env
 
 jekyll/.jekyll-cache
 schemaspy/config/schemaspy.properties
-schemaspy/output
+schemaspy/output/*
+!schemaspy/output/.keep
+
