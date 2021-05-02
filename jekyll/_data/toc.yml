@@ -11,14 +11,19 @@
 - title: Knowhows
   url: "knowhows"
   links:
-    - title: "階層データの取扱"
-      url: "knowhows/nested-tree"
-    - title: "auth0の導入"
-      url: "knowhows/auth0"
+    - title: "Rails"
+      url: "knowhows/rails"
+      children:
+        - title: "重要ポイント"
+          url: "knowhows/rspec/point"
+        - title: "階層データの取扱"
+          url: "knowhows/nested-tree"
+      - title: "Ransack"
+        url: "knowhows/ransack"
     - title: "Rspec"
       url: "knowhows/rspec"
       children:
         - title: "重要ポイント"
           url: "knowhows/rspec/point"
-    - title: "Ransack"
-      url: "knowhows/ransack"
+    - title: "auth0の導入"
+      url: "knowhows/auth0"

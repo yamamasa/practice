@@ -139,11 +139,11 @@ $(document).ready(function() {
             <li class="collapse show" id="documentation">
               
                 <li class="td-sidebar-nav__section-title">
-                  <a href="/practice/docs/introduction" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">概要</a>
+                  <a href="/practice/docs/introduction.html" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">概要</a>
                   
               
                 <li class="td-sidebar-nav__section-title">
-                  <a href="/practice/docs/requirements" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">要件</a>
+                  <a href="/practice/docs/requirements/" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">要件</a>
                   
               
             </li>
@@ -162,20 +162,20 @@ $(document).ready(function() {
             <li class="collapse show" id="knowhows">
               
                 <li class="td-sidebar-nav__section-title">
-                  <a href="/practice/knowhows/nested-tree" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">階層データの取扱</a>
+                  <a href="/practice/knowhows/rails" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">Rails</a>
                   
                     <ul>
                       <li class="collapse show" id="">
                         
-                      </li>
-                    </ul>
-                  
-              
-                <li class="td-sidebar-nav__section-title">
-                  <a href="/practice/knowhows/auth0" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">auth0の導入</a>
-                  
-                    <ul>
-                      <li class="collapse show" id="">
+                          <ul>
+                            
+                              <li><a class="td-sidebar-link td-sidebar-link__page " id="m-knowhows-rails-重要ポイント" href="/practice/knowhows/rspec/point/">重要ポイント</a></li>
+                            
+                              <li><a class="td-sidebar-link td-sidebar-link__page " id="m-knowhows-rails-階層データの取扱" href="/practice/knowhows/nested-tree/">階層データの取扱</a></li>
+                            
+                              <li><a class="td-sidebar-link td-sidebar-link__page " id="m-knowhows-rails-ransack" href="/practice/knowhows/ransack/">Ransack</a></li>
+                            
+                          </ul>
                         
                       </li>
                     </ul>
@@ -189,7 +189,7 @@ $(document).ready(function() {
                         
                           <ul>
                             
-                              <li><a class="td-sidebar-link td-sidebar-link__page " id="m-knowhows-rspec-重要ポイント" href="/practice/knowhows/rspec/point">重要ポイント</a></li>
+                              <li><a class="td-sidebar-link td-sidebar-link__page " id="m-knowhows-rspec-重要ポイント" href="/practice/knowhows/rspec/point/">重要ポイント</a></li>
                             
                           </ul>
                         
@@ -198,7 +198,7 @@ $(document).ready(function() {
                   
               
                 <li class="td-sidebar-nav__section-title">
-                  <a href="/practice/knowhows/ransack" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">Ransack</a>
+                  <a href="/practice/knowhows/auth0/" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">auth0の導入</a>
                   
                     <ul>
                       <li class="collapse show" id="">
@@ -240,26 +240,6 @@ $(document).ready(function() {
 <div class="section-index">
     <hr class="panel-line" />
     
-    <div class="entry">
-    <h5><a href="/practice/knowhows/auth0">auth0の導入</a></h5>
-    <p>認証プラットフォームauth0について解説</p>
-    </div>
-    <div class="entry">
-    <h5><a href="/practice/knowhows/nested-tree">階層データの取り扱い</a></h5>
-    <p>階層データを扱う入れ子集合モデルについて解説</p>
-    </div>
-    <div class="entry">
-    <h5><a href="/practice/knowhows/ransack">Ransack</a></h5>
-    <p>検索機能を作るGemであるRansackについて説明</p>
-    </div>
-    <div class="entry">
-    <h5><a href="/practice/knowhows/rspec">Rspec</a></h5>
-    <p>Rspecの書き方について解説</p>
-    </div>
-    <div class="entry">
-    <h5><a href="/practice/knowhows/rspec/point">Rspec重要ポイント</a></h5>
-    <p>Rspecの書き方の重要ポイント</p>
-    </div>
 </div>
 
 <script
@@ -311,7 +291,8 @@ $.each(headers, function(i, header){
 })
 </script>
 
-
+<script>
+$('h1').first().append('<div></div>')</script>
 
 
               

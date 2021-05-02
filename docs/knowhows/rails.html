@@ -22,19 +22,22 @@
 <link rel="icon" type="image/png" href="/practice/assets/favicons/android-144x144.png" sizes="144x144">
 <link rel="icon" type="image/png" href="/practice/assets/favicons/android-192x192.png"sizes="192x192">
 
-<title>階層データの取り扱い</title>
-<meta property="og:title" content="階層データの取り扱い" />
-<meta property="og:description" content="階層データを扱う入れ子集合モデルについて解説" />
+<title>Rails</title>
+<meta property="og:title" content="Rails" />
+<meta property="og:description" content="Yamamasaの独断と偏見に基づくベストプラクティスをまとめるサイト
+" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="http://0.0.0.0:4000" />
 <meta property="og:site_name" content="http://0.0.0.0:4000" />
 
-<meta itemprop="name" content="階層データの取り扱い">
-<meta itemprop="description" content="階層データを扱う入れ子集合モデルについて解説">
+<meta itemprop="name" content="Rails">
+<meta itemprop="description" content="Yamamasaの独断と偏見に基づくベストプラクティスをまとめるサイト
+">
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="階層データの取り扱い"/>
-<meta name="twitter:description" content="階層データを扱う入れ子集合モデルについて解説"/>
+<meta name="twitter:title" content="Rails"/>
+<meta name="twitter:description" content="Yamamasaの独断と偏見に基づくベストプラクティスをまとめるサイト
+"/>
 
 <link rel="stylesheet" href="/practice/assets/css/main.css">
 <link rel="stylesheet" href="/practice/assets/css/palette.css">
@@ -136,11 +139,11 @@ $(document).ready(function() {
             <li class="collapse show" id="documentation">
               
                 <li class="td-sidebar-nav__section-title">
-                  <a href="/practice/docs/introduction" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">概要</a>
+                  <a href="/practice/docs/introduction.html" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">概要</a>
                   
               
                 <li class="td-sidebar-nav__section-title">
-                  <a href="/practice/docs/requirements" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">要件</a>
+                  <a href="/practice/docs/requirements/" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">要件</a>
                   
               
             </li>
@@ -159,17 +162,23 @@ $(document).ready(function() {
             <li class="collapse show" id="knowhows">
               
                 <li class="td-sidebar-nav__section-title">
-                  <a href="/practice/knowhows/nested-tree" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">階層データの取扱</a>
+                  <a href="/practice/knowhows/rails" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">Rails</a>
                   
                     <ul>
                       <li class="collapse show" id="">
                         
+                          <ul>
+                            
+                              <li><a class="td-sidebar-link td-sidebar-link__page " id="m-knowhows-rails-重要ポイント" href="/practice/knowhows/rspec/point/">重要ポイント</a></li>
+                            
+                              <li><a class="td-sidebar-link td-sidebar-link__page " id="m-knowhows-rails-階層データの取扱" href="/practice/knowhows/nested-tree/">階層データの取扱</a></li>
+                            
+                              <li><a class="td-sidebar-link td-sidebar-link__page " id="m-knowhows-rails-ransack" href="/practice/knowhows/ransack/">Ransack</a></li>
+                            
+                          </ul>
+                        
                       </li>
                     </ul>
-                  
-              
-                <li class="td-sidebar-nav__section-title">
-                  <a href="/practice/knowhows/auth0" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">auth0の導入</a>
                   
               
                 <li class="td-sidebar-nav__section-title">
@@ -177,7 +186,7 @@ $(document).ready(function() {
                   
               
                 <li class="td-sidebar-nav__section-title">
-                  <a href="/practice/knowhows/ransack" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">Ransack</a>
+                  <a href="/practice/knowhows/auth0/" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">auth0の導入</a>
                   
               
             </li>
@@ -206,33 +215,18 @@ $(document).ready(function() {
                 </li>
                 
                 <li class="breadcrumb-item active" aria-current="page">
-	          <a href="http://0.0.0.0:4000/practice/knowhows/nested-tree">階層データの取り扱い</a>
+	          <a href="http://0.0.0.0:4000/practice/knowhows/rails">Rails</a>
                 </li>
                 
 	      </ol>
            </nav>
            <div class="td-content">
-	      <h1 id="階層データの取り扱い">階層データの取り扱い</h1>
+	      <h1 id="ruby-on-rails-に関するノウハウ">Ruby on Rails に関するノウハウ</h1>
 
-<h2 id="概要">概要</h2>
-<p>通常の親子関係の設計であれば、parent_idといった形で親のIDを持つだけで完了する。<br />
-一方で、システムに置いて扱う階層構造は、カテゴリ、本支店関係、部署など、階層が明確に定義されていないことが多い。<br />
-この時に使えるのが”入れ子集合モデル”である。<br /></p>
-
-<h2 id="詳しい説明">詳しい説明</h2>
-<ul>
-  <li><a href="https://gihyo.jp/dev/serial/01/sql_academy2/000501">第5回　SQLで木構造を扱う～入れ子集合モデル　（1）入れ子集合モデルとは何か ：SQLアタマアカデミー｜gihyo.jp … 技術評論社</a></li>
-</ul>
-
-<h2 id="テクノロジー">テクノロジー</h2>
-<p>いろいろな言語プラットフォームで、入れ子集合モデルを取り扱うためのライブラリがある。
-私はRuby on Railsでは<a href="https://github.com/collectiveidea/awesome_nested_set">Awesome Nested Set</a>をよく使っている。</p>
-
-<h2 id="注意点">注意点</h2>
-<ul>
-  <li>一覧などで気安く階層を遡ったりすると、負荷の低下をまねく</li>
-  <li>よく使うものはきちんと外部キーを持っておいたほうが良い</li>
-</ul>
+<div class="section-index">
+    <hr class="panel-line" />
+    
+</div>
 
 <script
   src="/practice/assets/js/jquery-3.3.1/jquery-3.3.1.min.js"

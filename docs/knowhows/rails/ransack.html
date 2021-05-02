@@ -22,19 +22,19 @@
 <link rel="icon" type="image/png" href="/practice/assets/favicons/android-144x144.png" sizes="144x144">
 <link rel="icon" type="image/png" href="/practice/assets/favicons/android-192x192.png"sizes="192x192">
 
-<title>Requirements</title>
-<meta property="og:title" content="Requirements" />
-<meta property="og:description" content="プロジェクト要件" />
+<title>Ransack</title>
+<meta property="og:title" content="Ransack" />
+<meta property="og:description" content="検索機能を作るGemであるRansackについて説明" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="http://0.0.0.0:4000" />
 <meta property="og:site_name" content="http://0.0.0.0:4000" />
 
-<meta itemprop="name" content="Requirements">
-<meta itemprop="description" content="プロジェクト要件">
+<meta itemprop="name" content="Ransack">
+<meta itemprop="description" content="検索機能を作るGemであるRansackについて説明">
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Requirements"/>
-<meta name="twitter:description" content="プロジェクト要件"/>
+<meta name="twitter:title" content="Ransack"/>
+<meta name="twitter:description" content="検索機能を作るGemであるRansackについて説明"/>
 
 <link rel="stylesheet" href="/practice/assets/css/main.css">
 <link rel="stylesheet" href="/practice/assets/css/palette.css">
@@ -161,6 +161,22 @@ $(document).ready(function() {
                 <li class="td-sidebar-nav__section-title">
                   <a href="/practice/knowhows/rails" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">Rails</a>
                   
+                    <ul>
+                      <li class="collapse show" id="">
+                        
+                          <ul>
+                            
+                              <li><a class="td-sidebar-link td-sidebar-link__page " id="m-knowhows-rails-重要ポイント" href="/practice/knowhows/rspec/point/">重要ポイント</a></li>
+                            
+                              <li><a class="td-sidebar-link td-sidebar-link__page " id="m-knowhows-rails-階層データの取扱" href="/practice/knowhows/nested-tree/">階層データの取扱</a></li>
+                            
+                              <li><a class="td-sidebar-link td-sidebar-link__page " id="m-knowhows-rails-ransack" href="/practice/knowhows/ransack/">Ransack</a></li>
+                            
+                          </ul>
+                        
+                      </li>
+                    </ul>
+                  
               
                 <li class="td-sidebar-nav__section-title">
                   <a href="/practice/knowhows/rspec" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">Rspec</a>
@@ -192,57 +208,41 @@ $(document).ready(function() {
               
               
                 <li class="breadcrumb-item">
-                  <a href="http://0.0.0.0:4000/practice/docs/">Documentation</a>
+                  <a href="http://0.0.0.0:4000/practice/knowhows/">Knowhows</a>
+                </li>
+                
+                <li class="breadcrumb-item">
+                  <a href="http://0.0.0.0:4000/practice/knowhows/rails/">Rails</a>
                 </li>
                 
                 <li class="breadcrumb-item active" aria-current="page">
-	          <a href="http://0.0.0.0:4000/practice/docs/requirements">Requirements</a>
+	          <a href="http://0.0.0.0:4000/practice/knowhows/rails/ransack">Ransack</a>
                 </li>
                 
 	      </ol>
            </nav>
            <div class="td-content">
-	      <h1 id="requirements">Requirements</h1>
+	      <h1 id="ransack">Ransack</h1>
+<p><a href="https://github.com/activerecord-hackery/ransack">Ransack</a>は検索機能をお手軽に作るためのGem</p>
 
-<p>本システムにおける要件を明示する</p>
-
-<h2 id="概要">概要</h2>
-<p>本システムはレンタルビデオ店 YEO で使用する業務システムである。
-レンタル品の商品及び在庫を管理する。</p>
-
-<h3 id="店舗">店舗</h3>
+<h2 id="ポイント">ポイント</h2>
 <ul>
-  <li>複数店舗を想定する</li>
+  <li>使用できるMatcherは[ここ](</li>
+  <li><a href="https://github.com/activerecord-hackery/ransack">Ransack</a>)で検索できる。</li>
+  <li>リレーション先のテーブルも条件とし指定できるが、複雑になると項目名が長くなりすぎる。その場合は<a href="https://github.com/activerecord-hackery/ransack#using-scopesclass-methods">カスタムスコープ</a>を作ったほうがいい</li>
+  <li>独自のScopeによるMatcherを作るときは、デフォルトのMatcherと命名を合わせておくとよい</li>
 </ul>
 
-<h3 id="認証">認証</h3>
+<h2 id="注意点">注意点</h2>
 <ul>
-  <li>Auth0を利用し、JWTで行う</li>
-</ul>
+  <li>標準のままでは、1,0をtrue,falseに変換してしまう。これを回避するには以下の設定をしておく
+    <div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="c1"># config/initializes/ransack.rb</span>
 
-<h3 id="商品">商品</h3>
-<ul>
-  <li>商品は現在のところ映画関連である。
-    <ul>
-      <li>本システムの商品情報は<a href="https://www.themoviedb.org/">TMDb</a>の映画及び番組情報と連携して作成する
-        <ul>
-          <li>なお、製品はTMDb APIを使用しているが、TMDbによって承認または認定されていない。</li>
-        </ul>
-      </li>
-      <li>映画情報の詳細は規約により保存できないためマッシュアップを実装する。</li>
-    </ul>
+ <span class="no">Ransack</span><span class="p">.</span><span class="nf">configure</span> <span class="k">do</span> <span class="o">|</span><span class="n">c</span><span class="o">|</span>
+   <span class="n">c</span><span class="p">.</span><span class="nf">sanitize_custom_scope_booleans</span> <span class="o">=</span> <span class="kp">false</span>
+ <span class="k">end</span>
+</code></pre></div>    </div>
   </li>
-  <li>将来的には本やCDの貸し出しに対応する可能性がある。</li>
-</ul>
-
-<h3 id="貸出返却">貸出・返却</h3>
-<ul>
-  <li>貸し出し・返却処理がおこなえる</li>
-</ul>
-
-<h3 id="売上計上">売上計上</h3>
-<ul>
-  <li>売上金が形状される。</li>
 </ul>
 
 <script

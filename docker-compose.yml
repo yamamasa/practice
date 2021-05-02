@@ -9,6 +9,7 @@ services:
     volumes:
       - ./rails/coverage:/app/coverage
       - ./schemaspy/output:/app/schemaspy
+      - ./docs:/app/practice
     restart: always
     depends_on:
       - rails
