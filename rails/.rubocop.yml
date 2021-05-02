@@ -25,6 +25,17 @@ Metrics/BlockLength:
     - 'Guardfile'
     - 'spec/*'
     - 'spec/**/*'
+    - 'db/fixtures/**/*'
+
+# メソッドの長さの制限
+Metrics/MethodLength:
+  Exclude:
+    - 'db/fixtures/**/*'
+
+# ABC評価
+Metrics/AbcSize:
+  Exclude:
+    - 'db/fixtures/**/*'
 
 # 文字列フォーマットはパーセント表記
 FormatString:
@@ -58,3 +69,6 @@ RSpec/LetSetup:
 RSpec/NestedGroups:
   Enabled: false
 
+# not_toではなくto_notで統一
+RSpec/NotToNot:
+  EnforcedStyle: to_not

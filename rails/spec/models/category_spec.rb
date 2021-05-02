@@ -16,4 +16,20 @@ RSpec.describe Category, type: :model do
       expect(category.children).to be_present
     end
   end
+
+  describe 'scope' do
+    describe 'tree_id_eq は' do
+      # 返りをテストするものをsubjectに入れると、 is_expected.toが使える
+      subject { described_class.tree_id_eq(current.id) }
+
+      let!(:current) { create :category }
+      let!(:child) { create :category, parent: current }
+      let!(:grandchild) { create :category, parent: child }
+
+      # itの省略表記。テスト意図が複雑でなければこれもあり
+      it { is_expected.to_not include current }
+      it { is_expected.to include child }
+      it { is_expected.to include grandchild }
+    end
+  end
 end

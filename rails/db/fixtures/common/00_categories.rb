@@ -1,7 +1,5 @@
 # yamlを使ったマスターデータの作成をしてみた
-def save (row, parent = nil)
-  prev ||= nil
-
+def save(row, prev = nil, parent = nil)
   saved = Category.seed(:code) do |s|
     s.parent_id = parent.id if parent.present?
     s.code = row['code']
@@ -9,17 +7,20 @@ def save (row, parent = nil)
   end
 
   # 並び替え
-  saved.move_to_right_of(prev) if prev.present?
+  saved.first.move_to_right_of(prev) if prev.present?
 
   # 子要素の登録
   if row['children'].present?
+    prev = nil
     row['children'].each do |c|
-      save(c, saved.first)
+      prev = save(c, prev, saved.first)
     end
   end
-  prev = saved.first
+  saved.first
 end
 
-YAML.load_file('./db/fixtures/common/yml/00_categories.yml').each do | row |
-  save(row)
+# rubocop:disable Lint/UselessAssignment
+YAML.load_file('./db/fixtures/common/yml/00_categories.yml').each do |row|
+  prev = save(row, prev)
 end
+# rubocop:enable Lint/UselessAssignment

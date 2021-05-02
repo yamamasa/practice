@@ -251,6 +251,15 @@ $(document).ready(function() {
   <li>createはDBに登録してしまうので、SQLが流れる。buildは保存前。つまり、保存しなくてもテストできるものはbuildでやる。これは、テストが増えてきたときのパフォーマンスに影響する。</li>
 </ul>
 
+<h3 id="itをまとめるか分けるか">itをまとめるか、分けるか</h3>
+<p>まず、挙動の違いは以下の通り</p>
+<ul>
+  <li>itの中に複数のexpectを書くと、失敗したら以降は実行されない。</li>
+  <li>itを分ければすべて実行される。</li>
+</ul>
+
+<p>この違いを理解して、あるものが扱けたら他が進んでも意味がないものはまとめる。個別に確認したほうがいいものは分けるとよい</p>
+
 <script
   src="/practice/assets/js/jquery-3.3.1/jquery-3.3.1.min.js"
   integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="

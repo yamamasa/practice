@@ -13,12 +13,13 @@
 ActiveRecord::Schema.define(version: 2021_05_02_072220) do
 
   create_table "accounts", charset: "utf8mb4", force: :cascade do |t|
-    t.string "sub"
+    t.string "sub", null: false
     t.string "name", null: false
     t.string "email", null: false
     t.string "picture_url"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["sub"], name: "index_accounts_on_sub", unique: true
   end
 
   create_table "categories", charset: "utf8mb4", force: :cascade do |t|
@@ -29,6 +30,7 @@ ActiveRecord::Schema.define(version: 2021_05_02_072220) do
     t.string "name", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["code"], name: "index_categories_on_code", unique: true
   end
 
 end
