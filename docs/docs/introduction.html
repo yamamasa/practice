@@ -233,6 +233,12 @@ $(document).ready(function() {
 $ vi nuxt/.env
 </code></pre></div></div>
 
+<h3 id="schemaspyの設定の編集">Schemaspyの設定の編集</h3>
+<p>サンプルをコピーして設定してください。(ENV化したいところ)</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ cp schemaspy/config/schemaspy.properties.sample schemaspy/config/schemaspy.properties
+$ vi schemaspy/config/schemaspy.properties
+</code></pre></div></div>
+
 <h3 id="docker-compose-の-起動">Docker Compose の 起動</h3>
 <p>docker-composeを起動してください。</p>
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>docker-compose run <span class="nt">--rm</span> rake db:create

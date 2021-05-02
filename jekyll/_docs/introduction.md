@@ -38,6 +38,13 @@ $ cp nuxt/.env.sample nuxt/.env
 $ vi nuxt/.env
 ```
 
+### Schemaspyの設定の編集
+サンプルをコピーして設定してください。(ENV化したいところ)
+```
+$ cp schemaspy/config/schemaspy.properties.sample schemaspy/config/schemaspy.properties
+$ vi schemaspy/config/schemaspy.properties
+```
+
 ### Docker Compose の 起動
 docker-composeを起動してください。
 ```bash

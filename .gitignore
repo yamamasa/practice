@@ -69,3 +69,4 @@ yarn-debug.log*
 compose.env
 
 jekyll/.jekyll-cache
+schemaspy/config/schemaspy.properties

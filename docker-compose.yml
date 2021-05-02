@@ -8,6 +8,7 @@ services:
       - 3001:80
     volumes:
       - ./rails/coverage:/app/coverage
+      - ./schemaspy/output:/app/schemaspy
     restart: always
     depends_on:
       - rails
@@ -58,6 +59,17 @@ services:
     ports:
       - 4000:4000
     restart: always
+
+  schemaspy:
+    image: schemaspy/schemaspy
+    env_file:
+      - ./compose.env
+    volumes:
+      - ./schemaspy/output:/output
+      - ./schemaspy/config:/config
+    command: ["-configFile", "/config/schemaspy.properties"]
+    links:
+      - mysql
 volumes:
   mysql-data:
     driver: local
