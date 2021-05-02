@@ -2,7 +2,7 @@
 title: Rspec
 tags:
  -
-description: Rspecの書き方
+description: Rspecの書き方について解説
 ---
 
 # Rspecの記述

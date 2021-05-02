@@ -2,7 +2,7 @@
 title: 階層データの取り扱い
 tags:
  -
-description: Introduction
+description: 階層データを扱う入れ子集合モデルについて解説
 ---
 
 # 階層データの取り扱い

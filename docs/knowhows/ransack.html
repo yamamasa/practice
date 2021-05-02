@@ -23,19 +23,19 @@
 <link rel="icon" type="image/png" href="/practice/assets/favicons/android-144x144.png" sizes="144x144">
 <link rel="icon" type="image/png" href="/practice/assets/favicons/android-192x192.png"sizes="192x192">
 
-<title>auth0の導入</title>
-<meta property="og:title" content="auth0の導入" />
-<meta property="og:description" content="認証プラットフォームauth0について解説" />
+<title>Ransack</title>
+<meta property="og:title" content="Ransack" />
+<meta property="og:description" content="検索機能を作るGemであるRansackについて説明" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="http://0.0.0.0:4000" />
 <meta property="og:site_name" content="http://0.0.0.0:4000" />
 
-<meta itemprop="name" content="auth0の導入">
-<meta itemprop="description" content="認証プラットフォームauth0について解説">
+<meta itemprop="name" content="Ransack">
+<meta itemprop="description" content="検索機能を作るGemであるRansackについて説明">
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="auth0の導入"/>
-<meta name="twitter:description" content="認証プラットフォームauth0について解説"/>
+<meta name="twitter:title" content="Ransack"/>
+<meta name="twitter:description" content="検索機能を作るGemであるRansackについて説明"/>
 
 <link rel="stylesheet" href="/practice/assets/css/main.css">
 <link rel="stylesheet" href="/practice/assets/css/palette.css">
@@ -156,12 +156,6 @@ $(document).ready(function() {
                 <li class="td-sidebar-nav__section-title">
                   <a href="/practice/knowhows/auth0" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">auth0の導入</a>
                   
-                    <ul>
-                      <li class="collapse show" id="">
-                        
-                      </li>
-                    </ul>
-                  
               
                 <li class="td-sidebar-nav__section-title">
                   <a href="/practice/knowhows/rspec" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">Rspec</a>
@@ -193,48 +187,33 @@ $(document).ready(function() {
                 </li>
                 
                 <li class="breadcrumb-item active" aria-current="page">
-	          <a href="http://0.0.0.0:4000/practice/knowhows/auth0">auth0の導入</a>
+	          <a href="http://0.0.0.0:4000/practice/knowhows/ransack">Ransack</a>
                 </li>
                 
 	      </ol>
            </nav>
            <div class="td-content">
-	      <h1 id="auth0の導入">auth0の導入</h1>
+	      <h1 id="ransack">Ransack</h1>
+<p><a href="https://github.com/activerecord-hackery/ransack">Ransack</a>は検索機能をお手軽に作るためのGem</p>
 
-<h2 id="概要">概要</h2>
-<p>以下参考ページの情報ベースでスムーズに導入できた。</p>
-
-<h3 id="nuxtへの導入">Nuxtへの導入</h3>
-<p><a href="https://auth.nuxtjs.org/">nuxt auth</a>を使えば結構簡単。
-axiosとの連動は<a href="https://tech.smartcamp.co.jp/entry/auth0-jwt">Auth0でJWT認証してみた話 - SMARTCAMP Engineer Blog</a>が参考になる</p>
-<h4 id="参考ページ">参考ページ</h4>
+<h2 id="ポイント">ポイント</h2>
 <ul>
-  <li><a href="https://tech.smartcamp.co.jp/entry/2019/05/31/185456">Nuxt.jsとAuth0でモダンなソーシャルログインを実装してみる - SMARTCAMP Engineer Blog</a></li>
-  <li><a href="https://simple-it-life.com/2021/01/15/nuxt-auth/">Nuxt.jsのmiddlewareとAuth Moduleを使ってAuth0ログインを実装する | Simple IT Life</a></li>
+  <li>使用できるMatcherは[ここ](</li>
+  <li><a href="https://github.com/activerecord-hackery/ransack">Ransack</a>)で検索できる。</li>
+  <li>リレーション先のテーブルも条件とし指定できるが、複雑になると項目名が長くなりすぎる。その場合は<a href="https://github.com/activerecord-hackery/ransack#using-scopesclass-methods">カスタムスコープ</a>を作ったほうがいい</li>
+  <li>独自のScopeによるMatcherを作るときは、デフォルトのMatcherと命名を合わせておくとよい</li>
 </ul>
 
-<h4 id="注意点">注意点</h4>
+<h2 id="注意点">注意点</h2>
 <ul>
-  <li>NuxtのStoreを一度も使ってない場合、空ファイルでよいので作らないと動かない。</li>
-  <li>auth-modulesでnanoidのエラーが出るが、バージョン指定(2.1.11)で入れないと動かなかった。
-    <ul>
-      <li><a href="https://github.com/nuxt-community/auth-module/issues/750">GitHub Issue</a> <em>Excelente, 100% recomend</em>とのこと</li>
-    </ul>
+  <li>標準のままでは、1,0をtrue,falseに変換してしまう。これを回避するには以下の設定をしておく
+    <div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="c1"># config/initializes/ransack.rb</span>
+
+ <span class="no">Ransack</span><span class="p">.</span><span class="nf">configure</span> <span class="k">do</span> <span class="o">|</span><span class="n">c</span><span class="o">|</span>
+   <span class="n">c</span><span class="p">.</span><span class="nf">sanitize_custom_scope_booleans</span> <span class="o">=</span> <span class="kp">false</span>
+ <span class="k">end</span>
+</code></pre></div>    </div>
   </li>
-</ul>
-
-<h3 id="rails-への導入">Rails への導入</h3>
-<p><a href="https://github.com/auth0/ruby-auth0">Auth0 Ruby</a>でいけた</p>
-<h4 id="はまりどころ">はまりどころ</h4>
-<ul>
-  <li>Auth0のライブラリでID Tokenのチェックをする際に、フロント側同じアプリを使ったらエラーではまった。</li>
-  <li>Applications -&gt; APIsから、 Machine to Machine Applicationsを作成の上、create:client_grantsの認証を通す必要がある。</li>
-  <li>チェックの時のaudienceはフロントで使ってるアプリケーションのCLIENT_IDになるので注意</li>
-</ul>
-
-<h4 id="参考ページ-1">参考ページ</h4>
-<ul>
-  <li><a href="https://tech.smartcamp.co.jp/entry/auth0-jwt">Auth0でJWT認証してみた話 - SMARTCAMP Engineer Blog</a></li>
 </ul>
 
 <script

@@ -2,7 +2,7 @@
 title: auth0の導入
 tags:
  -
-description: Introduction
+description: 認証プラットフォームauth0について解説
 ---
 
 # auth0の導入
