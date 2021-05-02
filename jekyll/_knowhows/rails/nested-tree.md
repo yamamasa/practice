@@ -1,7 +1,7 @@
 ---
 title: 階層データの取り扱い
 tags:
- -
+ - rails
 description: 階層データを扱う入れ子集合モデルについて解説
 ---
 

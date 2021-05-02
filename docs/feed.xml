@@ -6,8 +6,8 @@
 </description>
     <link>http://0.0.0.0:4000/practice/</link>
     <atom:link href="http://0.0.0.0:4000/practice/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 02 May 2021 05:51:28 -0500</pubDate>
-    <lastBuildDate>Sun, 02 May 2021 05:51:28 -0500</lastBuildDate>
+    <pubDate>Sun, 02 May 2021 11:18:29 -0500</pubDate>
+    <lastBuildDate>Sun, 02 May 2021 11:18:29 -0500</lastBuildDate>
     <generator>Jekyll v4.2.0</generator>
     
       <item>
@@ -19,9 +19,7 @@
         <guid isPermaLink="true">http://0.0.0.0:4000/practice/2021/welcome/</guid>
         
         
-        <category>site</category>
-        
-        <category>update</category>
+        <category>rails</category>
         
       </item>
     

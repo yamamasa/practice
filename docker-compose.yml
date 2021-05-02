@@ -15,6 +15,7 @@ services:
       - rails
       - nuxt
       - jekyll
+      
   rails:
     build:
       context: ./
@@ -56,9 +57,10 @@ services:
     volumes:
       - ./jekyll:/usr/src/app
       - ./docs:/srv/jekyll/_site
-    command: sh -c 'jekyll serve -s /usr/src/app --watch'
+    command: jekyll serve -s /usr/src/app --watch --force_polling --livereload
     ports:
       - 4000:4000
+      - 35729:35729
     restart: always
 
   schemaspy:

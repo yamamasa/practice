@@ -2,10 +2,10 @@
 title: Rspec
 tags:
  -
-description: Rspecの書き方について解説
+description: Rspecの概要
 ---
 
-# Rspecの記述
+# Rspecの概要
 
 ## 概要
 Ruby on Railsのテストコード記述のためのノウハウをまとめる。

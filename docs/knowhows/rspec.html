@@ -22,19 +22,22 @@
 <link rel="icon" type="image/png" href="/practice/assets/favicons/android-144x144.png" sizes="144x144">
 <link rel="icon" type="image/png" href="/practice/assets/favicons/android-192x192.png"sizes="192x192">
 
-<title>Introduction</title>
-<meta property="og:title" content="Introduction" />
-<meta property="og:description" content="Introduction" />
+<title>Rspec</title>
+<meta property="og:title" content="Rspec" />
+<meta property="og:description" content="Yamamasaの独断と偏見に基づくベストプラクティスをまとめるサイト
+" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="http://0.0.0.0:4000" />
 <meta property="og:site_name" content="http://0.0.0.0:4000" />
 
-<meta itemprop="name" content="Introduction">
-<meta itemprop="description" content="Introduction">
+<meta itemprop="name" content="Rspec">
+<meta itemprop="description" content="Yamamasaの独断と偏見に基づくベストプラクティスをまとめるサイト
+">
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Introduction"/>
-<meta name="twitter:description" content="Introduction"/>
+<meta name="twitter:title" content="Rspec"/>
+<meta name="twitter:description" content="Yamamasaの独断と偏見に基づくベストプラクティスをまとめるサイト
+"/>
 
 <link rel="stylesheet" href="/practice/assets/css/main.css">
 <link rel="stylesheet" href="/practice/assets/css/palette.css">
@@ -138,12 +141,6 @@ $(document).ready(function() {
                 <li class="td-sidebar-nav__section-title">
                   <a href="/practice/docs/introduction" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">概要</a>
                   
-                    <ul>
-                      <li class="collapse show" id="">
-                        
-                      </li>
-                    </ul>
-                  
               
                 <li class="td-sidebar-nav__section-title">
                   <a href="/practice/docs/requirements" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">要件</a>
@@ -170,6 +167,20 @@ $(document).ready(function() {
               
                 <li class="td-sidebar-nav__section-title">
                   <a href="/practice/knowhows/rspec" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">Rspec</a>
+                  
+                    <ul>
+                      <li class="collapse show" id="">
+                        
+                          <ul>
+                            
+                              <li><a class="td-sidebar-link td-sidebar-link__page " id="m-knowhows-rspec-概要" href="/practice/knowhows/rspec/introduction">概要</a></li>
+                            
+                              <li><a class="td-sidebar-link td-sidebar-link__page " id="m-knowhows-rspec-重要ポイント" href="/practice/knowhows/rspec/point">重要ポイント</a></li>
+                            
+                          </ul>
+                        
+                      </li>
+                    </ul>
                   
               
                 <li class="td-sidebar-nav__section-title">
@@ -198,100 +209,45 @@ $(document).ready(function() {
               
               
                 <li class="breadcrumb-item">
-                  <a href="http://0.0.0.0:4000/practice/docs/">Documentation</a>
+                  <a href="http://0.0.0.0:4000/practice/knowhows/">Knowhows</a>
                 </li>
                 
                 <li class="breadcrumb-item active" aria-current="page">
-	          <a href="http://0.0.0.0:4000/practice/docs/introduction">Introduction</a>
+	          <a href="http://0.0.0.0:4000/practice/knowhows/rspec">Rspec</a>
                 </li>
                 
 	      </ol>
            </nav>
            <div class="td-content">
-	      <h1 id="introduction">Introduction</h1>
-<p>このプラクティスでは、仮想の案件を想定しながら作り進めていきます。
-あくまで開発方針を示すのが目的となるため、本番運用を想定した作りにはしていません。
-各種パスワードの管理には十分注意してください。</p>
-
-<h2 id="必要なもの">必要なもの</h2>
-<ul>
-  <li>docker-compose</li>
-</ul>
-
-<h2 id="利用テクノロジー">利用テクノロジー</h2>
-<ul>
-  <li>Ruby on Rails</li>
-  <li>Jekyll
-ドキュメンテーション</li>
-</ul>
-
-<h2 id="起動方法">起動方法</h2>
-<h3 id="composeenvの作成">compose.envの作成</h3>
-<p>サンプルをコピーして必要な内容を設定してください。</p>
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">cp </span>compose.env.sample compose.env
-</code></pre></div></div>
-<p><a href="https://www.themoviedb.org/">TMDb</a>から各自規約を確認・同意の上APIキーを取得してください。<br />
-取得できたらTMDB_API_KEYの項目に取得したAPIキーを設定します。</p>
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>vi compose.env
-</code></pre></div></div>
-
-<h3 id="nuxt用envの編集">Nuxt用Envの編集</h3>
-<p>サンプルをコピーして設定してください。
-<a href="https://auth0.com/">auth0</a>の認証情報が必要です。</p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ cp nuxt/.env.sample nuxt/.env
-$ vi nuxt/.env
-</code></pre></div></div>
-
-<h3 id="schemaspyの設定の編集">Schemaspyの設定の編集</h3>
-<p>サンプルをコピーして設定してください。(ENV化したいところ)</p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ cp schemaspy/config/schemaspy.properties.sample schemaspy/config/schemaspy.properties
-$ vi schemaspy/config/schemaspy.properties
-</code></pre></div></div>
-
-<h3 id="docker-compose-の-起動">Docker Compose の 起動</h3>
-<p>docker-composeを起動してください。</p>
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>docker-compose run <span class="nt">--rm</span> rake db:create
-<span class="nv">$ </span>docker-compose run <span class="nt">--rm</span> rake db:migrate
-<span class="nv">$ </span>docker-compose run <span class="nt">--rm</span> rake db:seed_fu
-<span class="nv">$ </span>docker-compose up <span class="nt">-d</span> <span class="nt">--build</span>
-</code></pre></div></div>
-
-<h2 id="ポートurlの割り当て">ポート・URLの割り当て</h2>
-<p>アプリケーションはポート3001でNginxのプロキシが起動します。
-そのプロキシを通してURLを以下の通り振り分けます。</p>
-
-<table>
-  <thead>
-    <tr>
-      <th style="text-align: left">URL</th>
-      <th style="text-align: center">CONTAINER</th>
-      <th>目的</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align: left">/</td>
-      <td style="text-align: center">nuxt</td>
-      <td>フロントエンド</td>
-    </tr>
-    <tr>
-      <td style="text-align: left">/api</td>
-      <td style="text-align: center">rails</td>
-      <td>API</td>
-    </tr>
-    <tr>
-      <td style="text-align: left">/practice</td>
-      <td style="text-align: center">jekyll</td>
-      <td>開発ドキュメント</td>
-    </tr>
-    <tr>
-      <td style="text-align: left">/coverage</td>
-      <td style="text-align: center">jekyll</td>
-      <td>SimpleCovのコードカバレッジ</td>
-    </tr>
-  </tbody>
-</table>
-
+	      <h1 id="rspec">Rspec</h1>
+<div class="section-index">
+  <hr class="panel-line" />
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+      <div class="entry">
+        <h5><a href="/practice/knowhows/rspec/introduction">Rspec</a></h5>
+        <p>Rspecの概要</p>
+      </div>
+    
+  
+    
+      <div class="entry">
+        <h5><a href="/practice/knowhows/rspec/point">Rspec重要ポイント</a></h5>
+        <p>Rspecの書き方の重要ポイント</p>
+      </div>
+    
+  
+</div>
 
 <script
   src="/practice/assets/js/jquery-3.3.1/jquery-3.3.1.min.js"
