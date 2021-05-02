@@ -14,6 +14,7 @@ FactoryBot.define do
       parent { create :category }
     end
 
+    # こちらは「子を複数持っている」
     trait :has_children do
       after(:create) do |parent|
         create_list :category, 2, parent: parent
