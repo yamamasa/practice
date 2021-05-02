@@ -10,16 +10,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_01_150803) do
+ActiveRecord::Schema.define(version: 2021_05_02_072220) do
 
   create_table "accounts", charset: "utf8mb4", force: :cascade do |t|
-    t.string "sub", null: false
+    t.string "sub"
     t.string "name", null: false
     t.string "email", null: false
     t.string "picture_url"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["sub"], name: "index_accounts_on_sub", unique: true
+  end
+
+  create_table "categories", charset: "utf8mb4", force: :cascade do |t|
+    t.bigint "parent_id"
+    t.integer "lft", null: false
+    t.integer "rgt", null: false
+    t.string "code", null: false
+    t.string "name", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
 end

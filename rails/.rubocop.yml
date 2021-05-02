@@ -30,6 +30,10 @@ Metrics/BlockLength:
 FormatString:
   EnforcedStyle: percent
 
+# 文字列フォーマットで名前空間つきを強制しない
+Style/FormatStringToken:
+  Enabled: false
+
 # クラス内のクラスなどを定義する際の形式の強制無効
 ClassAndModuleChildren:
   Enabled: false
@@ -53,3 +57,4 @@ RSpec/LetSetup:
 # ネストの深さを制限しない
 RSpec/NestedGroups:
   Enabled: false
+

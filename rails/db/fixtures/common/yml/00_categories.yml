@@ -1,0 +1,35 @@
+- code: language
+  name: 言語
+  children:
+    - code: japanese
+      name: 日本語
+    - code: english
+      name: 英語
+- code: story
+  name: ストーリー区分
+  children:
+    - code: story-action
+      name: アクション
+    - code: story-adventure
+      name: アドベンチャー
+    - code: story-comedy
+      name: コメディ
+    - code: story-suspense
+      name: サスペンス
+    - code: story-documentary
+      name: ドキュメンタリー
+    - code: story-fantasy
+      name: ファンタジー
+    - code: story-horror
+      name: ホラー
+- code: content
+  name: コンテンツ
+  children:
+    - code: content-drama
+      name: ドラマ
+    - code: content-anime
+      name: アニメ
+    - code: content-live
+      name: ライブ
+    - code: content-movie
+      name: 映画
