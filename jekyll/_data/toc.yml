@@ -20,3 +20,5 @@
       children:
         - title: "重要ポイント"
           url: "knowhows/rspec/point"
+    - title: "Ransack"
+      url: "knowhows/ransack"
