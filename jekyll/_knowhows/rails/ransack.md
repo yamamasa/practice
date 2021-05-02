@@ -1,7 +1,7 @@
 ---
 title: Ransack
 tags:
- -
+ - rails
 description: 検索機能を作るGemであるRansackについて説明
 ---
 

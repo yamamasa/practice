@@ -1,5 +1,6 @@
 class Category < ApplicationRecord
   acts_as_nested_set
+
   # スコープの説明: https://railsguides.jp/active_record_querying.html#%E3%82%B9%E3%82%B3%E3%83%BC%E3%83%97
 
   # あるカテゴリの配下にあるカテゴリを取得

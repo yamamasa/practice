@@ -24,20 +24,17 @@
 
 <title>Rspec</title>
 <meta property="og:title" content="Rspec" />
-<meta property="og:description" content="Yamamasaの独断と偏見に基づくベストプラクティスをまとめるサイト
-" />
+<meta property="og:description" content="Rspecの概要" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="http://0.0.0.0:4000" />
 <meta property="og:site_name" content="http://0.0.0.0:4000" />
 
 <meta itemprop="name" content="Rspec">
-<meta itemprop="description" content="Yamamasaの独断と偏見に基づくベストプラクティスをまとめるサイト
-">
+<meta itemprop="description" content="Rspecの概要">
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Rspec"/>
-<meta name="twitter:description" content="Yamamasaの独断と偏見に基づくベストプラクティスをまとめるサイト
-"/>
+<meta name="twitter:description" content="Rspecの概要"/>
 
 <link rel="stylesheet" href="/practice/assets/css/main.css">
 <link rel="stylesheet" href="/practice/assets/css/palette.css">
@@ -212,42 +209,53 @@ $(document).ready(function() {
                   <a href="http://0.0.0.0:4000/practice/knowhows/">Knowhows</a>
                 </li>
                 
+                <li class="breadcrumb-item">
+                  <a href="http://0.0.0.0:4000/practice/knowhows/rspec/">Rspec</a>
+                </li>
+                
                 <li class="breadcrumb-item active" aria-current="page">
-	          <a href="http://0.0.0.0:4000/practice/knowhows/rspec">Rspec</a>
+	          <a href="http://0.0.0.0:4000/practice/knowhows/rspec/introduction">Rspec</a>
                 </li>
                 
 	      </ol>
            </nav>
            <div class="td-content">
-	      <h1 id="rspec">Rspec</h1>
-<div class="section-index">
-  <hr class="panel-line" />
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-      <div class="entry">
-        <h5><a href="/practice/knowhows/rspec/introduction">Rspec</a></h5>
-        <p>Rspecの概要</p>
-      </div>
-    
-  
-    
-      <div class="entry">
-        <h5><a href="/practice/knowhows/rspec/point">Rspec重要ポイント</a></h5>
-        <p>Rspecの書き方の重要ポイント</p>
-      </div>
-    
-  
-</div>
+	      <h1 id="rspecの概要">Rspecの概要</h1>
+
+<h2 id="概要">概要</h2>
+<p>Ruby on Railsのテストコード記述のためのノウハウをまとめる。
+<br /></p>
+
+<h2 id="はじめに">はじめに</h2>
+<ul>
+  <li><a href="https://github.com/thoughtbot/factory_bot">factory_bot</a></li>
+  <li>テスト用のデータ作成が超絶楽になる。</li>
+  <li>
+    <p>詳しい使い方は<a href="https://github.com/thoughtbot/factory_bot/blob/master/GETTING_STARTED.md">こちら</a>自動翻訳でもある程度読めるので見ておくとい</p>
+  </li>
+  <li><a href="https://github.com/ffaker/ffaker/blob/main/REFERENCE.md">FFaker</a></li>
+  <li>それっぽいテストデータが作れる。</li>
+  <li>パターン数に限りがあるので、ユニーク制約がかかる場所に使ってはいけない。(FactoryBotのsequence使う)</li>
+  <li><a href="https://github.com/guard/guard-rspec">Guard</a>
+    <ul>
+      <li>起動しておくと、ファイル保存でRspecを実行してくれる。</li>
+      <li>緑がどんどん増えていくのが癖になる</li>
+    </ul>
+  </li>
+  <li><a href="https://github.com/simplecov-ruby/simplecov">Simplecov</a>
+    <ul>
+      <li>テストカバレッジを表示</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="心構え">心構え</h2>
+<ul>
+  <li>Rspecは楽しく書けないと続かない。</li>
+  <li>そういう意味で便利ツールはどんどん使う。</li>
+  <li>重箱の隅突っついていく</li>
+</ul>
+
 
 <script
   src="/practice/assets/js/jquery-3.3.1/jquery-3.3.1.min.js"

@@ -159,11 +159,21 @@ $(document).ready(function() {
             <li class="collapse show" id="knowhows">
               
                 <li class="td-sidebar-nav__section-title">
-                  <a href="/practice/knowhows/nested-tree" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">階層データの取扱</a>
+                  <a href="/practice/knowhows/rails" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">Rails</a>
                   
-              
-                <li class="td-sidebar-nav__section-title">
-                  <a href="/practice/knowhows/auth0" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">auth0の導入</a>
+                    <ul>
+                      <li class="collapse show" id="">
+                        
+                          <ul>
+                            
+                              <li><a class="td-sidebar-link td-sidebar-link__page " id="m-knowhows-rails-階層データの取扱" href="/practice/knowhows/rails/nested-tree">階層データの取扱</a></li>
+                            
+                              <li><a class="td-sidebar-link td-sidebar-link__page " id="m-knowhows-rails-ransack" href="/practice/knowhows/rails/ransack">Ransack</a></li>
+                            
+                          </ul>
+                        
+                      </li>
+                    </ul>
                   
               
                 <li class="td-sidebar-nav__section-title">
@@ -171,13 +181,7 @@ $(document).ready(function() {
                   
               
                 <li class="td-sidebar-nav__section-title">
-                  <a href="/practice/knowhows/ransack" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">Ransack</a>
-                  
-                    <ul>
-                      <li class="collapse show" id="">
-                        
-                      </li>
-                    </ul>
+                  <a href="/practice/knowhows/auth0" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">auth0の導入</a>
                   
               
             </li>
@@ -205,8 +209,12 @@ $(document).ready(function() {
                   <a href="http://0.0.0.0:4000/practice/knowhows/">Knowhows</a>
                 </li>
                 
+                <li class="breadcrumb-item">
+                  <a href="http://0.0.0.0:4000/practice/knowhows/rails/">Rails</a>
+                </li>
+                
                 <li class="breadcrumb-item active" aria-current="page">
-	          <a href="http://0.0.0.0:4000/practice/knowhows/ransack">Ransack</a>
+	          <a href="http://0.0.0.0:4000/practice/knowhows/rails/ransack">Ransack</a>
                 </li>
                 
 	      </ol>
@@ -285,7 +293,7 @@ $.each(headers, function(i, header){
 </script>
 
 <script>
-$('h1').first().append('<div></div>')</script>
+$('h1').first().append('<div><span style="font-size:12px" class="badge badge-primary"><a style="cursor:pointer; color:white" href="http://0.0.0.0:4000/practice/tags#rails ">rails</a></span></div>')</script>
 
 
               
