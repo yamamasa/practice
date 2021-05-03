@@ -52,7 +52,7 @@ export default {
       icons: {
         solid: true,
         regular: true,
-        brand: true
+        brands: true
       }
     }]
   ],
@@ -67,8 +67,18 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
+    hardSource: true,
+    babel: {
+      plugins: [
+        [
+          "@babel/plugin-proposal-private-methods",
+          {
+            "loose": true
+          }
+        ]
+      ]
+    }
   },
-
   devServer: {
     disableHostCheck: true
   },
@@ -86,7 +96,6 @@ export default {
 
   auth: {
     strategies: {
-
       auth0: {
         domain: process.env.AUTH0_DOMAIN,
         client_id: process.env.AUTH0_CLIENT_ID,
@@ -104,9 +113,13 @@ export default {
       callback: '/callback',  // コールバックURL
       home: '/mypage',  // ログイン後に遷移するページ
     },
-
-    router: {
-      middleware: ['auth']
-    }
   },
+  router: {
+    middleware: ['auth']
+  },
+  watchers: {
+    webpack: {
+        poll: true
+    }
+  }
 }

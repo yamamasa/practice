@@ -1,0 +1,7 @@
+main[role=main] {
+  & > header {
+    padding-top: 1rem;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid #dee2e6;
+  }
+}
