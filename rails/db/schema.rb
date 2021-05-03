@@ -26,11 +26,15 @@ ActiveRecord::Schema.define(version: 2021_05_02_072220) do
     t.bigint "parent_id"
     t.integer "lft", null: false
     t.integer "rgt", null: false
+    t.integer "depth", default: 0, null: false
     t.string "code", null: false
     t.string "name", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["code"], name: "index_categories_on_code", unique: true
+    t.index ["depth"], name: "index_categories_on_depth"
+    t.index ["lft"], name: "index_categories_on_lft"
+    t.index ["rgt"], name: "index_categories_on_rgt"
   end
 
 end

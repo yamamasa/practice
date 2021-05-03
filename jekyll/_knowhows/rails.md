@@ -18,3 +18,10 @@ permalinks: /knowhows/rails/
     {% endif %}
   {% endfor %}
 </div>
+
+## Docker開発での注意
+DockerでRailsを開発する場合、ファイルの更新検知を変える必要がある
+```ruby
+# config/environments/development.rb
+config.file_watcher = ActiveSupport::FileUpdateChecker
+```

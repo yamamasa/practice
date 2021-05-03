@@ -171,7 +171,9 @@ $(document).ready(function() {
                             
                               <li><a class="td-sidebar-link td-sidebar-link__page " id="m-knowhows-rails-階層データの取扱" href="/practice/knowhows/rails/nested-tree">階層データの取扱</a></li>
                             
-                              <li><a class="td-sidebar-link td-sidebar-link__page " id="m-knowhows-rails-ransack" href="/practice/knowhows/rails/ransack">Ransack</a></li>
+                              <li><a class="td-sidebar-link td-sidebar-link__page " id="m-knowhows-rails-検索の実装-ransack" href="/practice/knowhows/rails/ransack">検索の実装(Ransack)</a></li>
+                            
+                              <li><a class="td-sidebar-link td-sidebar-link__page " id="m-knowhows-rails-ページングの実装-pagy" href="/practice/knowhows/rails/pagy">ページングの実装(pagy)</a></li>
                             
                           </ul>
                         
@@ -237,6 +239,13 @@ $(document).ready(function() {
   
     
       <div class="entry">
+        <h5><a href="/practice/knowhows/rails/pagy">ページングの実装</a></h5>
+        <p>pagyによるページングの実装</p>
+      </div>
+    
+  
+    
+      <div class="entry">
         <h5><a href="/practice/knowhows/rails/ransack">Ransack</a></h5>
         <p>検索機能を作るGemであるRansackについて説明</p>
       </div>
@@ -249,6 +258,12 @@ $(document).ready(function() {
     
   
 </div>
+
+<h2 id="docker開発での注意">Docker開発での注意</h2>
+<p>DockerでRailsを開発する場合、ファイルの更新検知を変える必要がある</p>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># config/environments/development.rb</span>
+<span class="n">config</span><span class="p">.</span><span class="nf">file_watcher</span> <span class="o">=</span> <span class="no">ActiveSupport</span><span class="o">::</span><span class="no">FileUpdateChecker</span>
+</code></pre></div></div>
 
 <script
   src="/practice/assets/js/jquery-3.3.1/jquery-3.3.1.min.js"

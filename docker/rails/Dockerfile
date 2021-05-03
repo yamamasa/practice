@@ -1,6 +1,6 @@
 FROM ruby:3.0.1
 
-RUN apt-get update -qq && apt-get install -y nodejs default-mysql-client
+RUN apt-get update -qq && apt-get install -y nodejs default-mysql-client && gem update bundler
 
 RUN mkdir /app
 WORKDIR /app

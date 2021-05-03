@@ -34,8 +34,8 @@ gem 'jwt'
 
 gem 'cancancan'
 
-gem 'ransack'
 gem 'pagy'
+gem 'ransack'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -57,6 +57,9 @@ group :development, :test do
   gem 'rubocop-rspec'
   gem 'simplecov'
   gem 'webmock'
+
+  # n + 1 check
+  gem 'bullet'
 end
 
 group :development do

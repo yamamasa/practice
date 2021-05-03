@@ -2,9 +2,14 @@
   name: 言語
   children:
     - code: japanese
-      name: 日本語
-    - code: english
-      name: 英語
+      name: 邦画
+    - code: western
+      name: 洋画
+      children:
+        - code: western-subtitle-ja
+          name: 洋画(日本語字幕)
+        - code: western-dubbed-ja
+          name: 洋画(日本語吹替)
 - code: story
   name: ストーリー区分
   children:

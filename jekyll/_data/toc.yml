@@ -16,8 +16,10 @@
       children:
         - title: "階層データの取扱"
           url: "knowhows/rails/nested-tree"
-        - title: "Ransack"
+        - title: "検索の実装(Ransack)"
           url: "knowhows/rails/ransack"
+        - title: "ページングの実装(pagy)"
+          url: "knowhows/rails/pagy"
     - title: "Rspec"
       url: "knowhows/rspec"
       children:

@@ -26,6 +26,8 @@ Metrics/BlockLength:
     - 'spec/*'
     - 'spec/**/*'
     - 'db/fixtures/**/*'
+    - 'config/*'
+    - 'config/**/*'
 
 # メソッドの長さの制限
 Metrics/MethodLength:

@@ -2,7 +2,9 @@
 layout: null
 excluded_in_search: true
 ---
-
+div.highlighter-rouge > .highlight {
+  margin: 0.5em 0 0.5em 0
+}
 .highlight pre {
   border: none !important;
 }

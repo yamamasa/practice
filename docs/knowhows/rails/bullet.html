@@ -22,19 +22,19 @@
 <link rel="icon" type="image/png" href="/practice/assets/favicons/android-144x144.png" sizes="144x144">
 <link rel="icon" type="image/png" href="/practice/assets/favicons/android-192x192.png"sizes="192x192">
 
-<title>Ransack</title>
-<meta property="og:title" content="Ransack" />
-<meta property="og:description" content="検索機能を作るGemであるRansackについて説明" />
+<title>n+1問題対応</title>
+<meta property="og:title" content="n+1問題対応" />
+<meta property="og:description" content="Bulletを利用したN+1問題対策" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="http://0.0.0.0:4000" />
 <meta property="og:site_name" content="http://0.0.0.0:4000" />
 
-<meta itemprop="name" content="Ransack">
-<meta itemprop="description" content="検索機能を作るGemであるRansackについて説明">
+<meta itemprop="name" content="n+1問題対応">
+<meta itemprop="description" content="Bulletを利用したN+1問題対策">
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Ransack"/>
-<meta name="twitter:description" content="検索機能を作るGemであるRansackについて説明"/>
+<meta name="twitter:title" content="n+1問題対応"/>
+<meta name="twitter:description" content="Bulletを利用したN+1問題対策"/>
 
 <link rel="stylesheet" href="/practice/assets/css/main.css">
 <link rel="stylesheet" href="/practice/assets/css/palette.css">
@@ -168,7 +168,9 @@ $(document).ready(function() {
                             
                               <li><a class="td-sidebar-link td-sidebar-link__page " id="m-knowhows-rails-階層データの取扱" href="/practice/knowhows/rails/nested-tree">階層データの取扱</a></li>
                             
-                              <li><a class="td-sidebar-link td-sidebar-link__page " id="m-knowhows-rails-ransack" href="/practice/knowhows/rails/ransack">Ransack</a></li>
+                              <li><a class="td-sidebar-link td-sidebar-link__page " id="m-knowhows-rails-検索の実装-ransack" href="/practice/knowhows/rails/ransack">検索の実装(Ransack)</a></li>
+                            
+                              <li><a class="td-sidebar-link td-sidebar-link__page " id="m-knowhows-rails-ページングの実装-pagy" href="/practice/knowhows/rails/pagy">ページングの実装(pagy)</a></li>
                             
                           </ul>
                         
@@ -214,34 +216,17 @@ $(document).ready(function() {
                 </li>
                 
                 <li class="breadcrumb-item active" aria-current="page">
-	          <a href="http://0.0.0.0:4000/practice/knowhows/rails/ransack">Ransack</a>
+	          <a href="http://0.0.0.0:4000/practice/knowhows/rails/bullet">n+1問題対応</a>
                 </li>
                 
 	      </ol>
            </nav>
            <div class="td-content">
-	      <h1 id="ransack">Ransack</h1>
-<p><a href="https://github.com/activerecord-hackery/ransack">Ransack</a>は検索機能をお手軽に作るためのGem</p>
+	      <h1 id="bullet">Bullet</h1>
+<p>N+1問題に関してはかなり有名なので、<a href="https://github.com/flyerhzm/bullet">Bullet</a>をインストールしてで実装時紛れ込むのを防ぐ</p>
 
 <h2 id="ポイント">ポイント</h2>
-<ul>
-  <li>使用できるMatcherは[ここ](</li>
-  <li><a href="https://github.com/activerecord-hackery/ransack">Ransack</a>)で検索できる。</li>
-  <li>リレーション先のテーブルも条件とし指定できるが、複雑になると項目名が長くなりすぎる。その場合は<a href="https://github.com/activerecord-hackery/ransack#using-scopesclass-methods">カスタムスコープ</a>を作ったほうがいい</li>
-  <li>独自のScopeによるMatcherを作るときは、デフォルトのMatcherと命名を合わせておくとよい</li>
-</ul>
-
-<h2 id="注意点">注意点</h2>
-<ul>
-  <li>標準のままでは、1,0をtrue,falseに変換してしまう。これを回避するには以下の設定をしておく
-    <div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="c1"># config/initializes/ransack.rb</span>
-
- <span class="no">Ransack</span><span class="p">.</span><span class="nf">configure</span> <span class="k">do</span> <span class="o">|</span><span class="n">c</span><span class="o">|</span>
-   <span class="n">c</span><span class="p">.</span><span class="nf">sanitize_custom_scope_booleans</span> <span class="o">=</span> <span class="kp">false</span>
- <span class="k">end</span>
-</code></pre></div>    </div>
-  </li>
-</ul>
+<p>-　RailsをAPIモードで使用しているときは、画面がないので、Testで動かすとよい。<a href="https://github.com/flyerhzm/bullet#run-in-tests">公式の解説を参照</a>のこと</p>
 
 <script
   src="/practice/assets/js/jquery-3.3.1/jquery-3.3.1.min.js"
