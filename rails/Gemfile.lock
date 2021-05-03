@@ -278,10 +278,9 @@ GEM
       actionpack (>= 4.0)
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
-    thor (1.1.0)
-    tmdb-api (0.0.5)
-      activesupport
+    themoviedb (1.0.1)
       httparty
+    thor (1.1.0)
     tzinfo (2.0.4)
       concurrent-ruby (~> 1.0)
     unf (0.1.4)
@@ -334,7 +333,7 @@ DEPENDENCIES
   seed-fu
   simplecov
   spring
-  tmdb-api
+  themoviedb
   tzinfo-data
   webmock
 

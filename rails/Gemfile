@@ -38,7 +38,7 @@ gem 'cancancan'
 gem 'pagy'
 gem 'ransack'
 
-gem 'tmdb-api'
+gem 'themoviedb'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
