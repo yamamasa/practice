@@ -122,6 +122,9 @@ GEM
     hashdiff (1.0.1)
     http-cookie (1.0.3)
       domain_name (~> 0.5)
+    httparty (0.18.1)
+      mime-types (~> 3.0)
+      multi_xml (>= 0.5.2)
     i18n (1.8.10)
       concurrent-ruby (~> 1.0)
     jbuilder (2.11.2)
@@ -145,6 +148,7 @@ GEM
     mini_mime (1.0.3)
     minitest (5.14.4)
     msgpack (1.4.2)
+    multi_xml (0.6.0)
     mysql2 (0.5.3)
     nenv (0.3.0)
     netrc (0.11.0)
@@ -207,6 +211,7 @@ GEM
     rb-fsevent (0.10.4)
     rb-inotify (0.10.1)
       ffi (~> 1.0)
+    redis (4.2.5)
     regexp_parser (2.1.1)
     rest-client (2.0.2)
       http-cookie (>= 1.0.2, < 2.0)
@@ -274,6 +279,9 @@ GEM
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
     thor (1.1.0)
+    tmdb-api (0.0.5)
+      activesupport
+      httparty
     tzinfo (2.0.4)
       concurrent-ruby (~> 1.0)
     unf (0.1.4)
@@ -316,6 +324,7 @@ DEPENDENCIES
   rails (~> 6.1.3, >= 6.1.3.1)
   rails-controller-testing
   ransack
+  redis (~> 4.0)
   rspec-rails
   rspec_junit_formatter
   rubocop
@@ -325,6 +334,7 @@ DEPENDENCIES
   seed-fu
   simplecov
   spring
+  tmdb-api
   tzinfo-data
   webmock
 

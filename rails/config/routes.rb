@@ -5,6 +5,12 @@ Rails.application.routes.draw do
       namespace :v1 do
         # 実行可能アクションの制限と、id指定で数字以外認めない
         resources :categories, only: %i[index show], constraints: { id: /\d+/ }
+        resources :tmdb do
+          collection do
+            get :search
+          end
+        end
+
       end
     end
   end
