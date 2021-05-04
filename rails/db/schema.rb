@@ -10,7 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_02_072220) do
+ActiveRecord::Schema.define(version: 2021_05_04_052242) do
+
+  create_table "account_roles", charset: "utf8mb4", force: :cascade do |t|
+    t.bigint "account_id", null: false
+    t.bigint "shop_id", null: false
+    t.bigint "role_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["account_id", "shop_id", "role_id"], name: "index_account_roles_on_account_id_and_shop_id_and_role_id", unique: true
+    t.index ["account_id"], name: "index_account_roles_on_account_id"
+    t.index ["role_id"], name: "index_account_roles_on_role_id"
+    t.index ["shop_id"], name: "index_account_roles_on_shop_id"
+  end
 
   create_table "accounts", charset: "utf8mb4", force: :cascade do |t|
     t.string "sub", null: false
@@ -24,8 +36,8 @@ ActiveRecord::Schema.define(version: 2021_05_02_072220) do
 
   create_table "categories", charset: "utf8mb4", force: :cascade do |t|
     t.bigint "parent_id"
-    t.integer "lft", null: false
-    t.integer "rgt", null: false
+    t.integer "lft", default: 0, null: false
+    t.integer "rgt", default: 0, null: false
     t.integer "depth", default: 0, null: false
     t.string "code", null: false
     t.string "name", null: false
@@ -37,4 +49,30 @@ ActiveRecord::Schema.define(version: 2021_05_02_072220) do
     t.index ["rgt"], name: "index_categories_on_rgt"
   end
 
+  create_table "roles", charset: "utf8mb4", force: :cascade do |t|
+    t.string "code"
+    t.string "name"
+    t.text "description"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "shops", charset: "utf8mb4", force: :cascade do |t|
+    t.bigint "parent_id"
+    t.integer "lft", default: 0, null: false
+    t.integer "rgt", default: 0, null: false
+    t.string "code", null: false
+    t.string "name", null: false
+    t.integer "depth", default: 0, null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["code"], name: "index_shops_on_code", unique: true
+    t.index ["depth"], name: "index_shops_on_depth"
+    t.index ["lft"], name: "index_shops_on_lft"
+    t.index ["rgt"], name: "index_shops_on_rgt"
+  end
+
+  add_foreign_key "account_roles", "accounts"
+  add_foreign_key "account_roles", "roles"
+  add_foreign_key "account_roles", "shops"
 end

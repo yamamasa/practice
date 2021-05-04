@@ -22,22 +22,19 @@
 <link rel="icon" type="image/png" href="/practice/assets/favicons/android-144x144.png" sizes="144x144">
 <link rel="icon" type="image/png" href="/practice/assets/favicons/android-192x192.png"sizes="192x192">
 
-<title>Search</title>
-<meta property="og:title" content="Search" />
-<meta property="og:description" content="Yamamasaの独断と偏見に基づくベストプラクティスをまとめるサイト
-" />
+<title>マスタデータの管理</title>
+<meta property="og:title" content="マスタデータの管理" />
+<meta property="og:description" content="マスタデータの管理方法" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="http://0.0.0.0:4000" />
 <meta property="og:site_name" content="http://0.0.0.0:4000" />
 
-<meta itemprop="name" content="Search">
-<meta itemprop="description" content="Yamamasaの独断と偏見に基づくベストプラクティスをまとめるサイト
-">
+<meta itemprop="name" content="マスタデータの管理">
+<meta itemprop="description" content="マスタデータの管理方法">
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Search"/>
-<meta name="twitter:description" content="Yamamasaの独断と偏見に基づくベストプラクティスをまとめるサイト
-"/>
+<meta name="twitter:title" content="マスタデータの管理"/>
+<meta name="twitter:description" content="マスタデータの管理方法"/>
 
 <link rel="stylesheet" href="/practice/assets/css/main.css">
 <link rel="stylesheet" href="/practice/assets/css/palette.css">
@@ -164,6 +161,24 @@ $(document).ready(function() {
                 <li class="td-sidebar-nav__section-title">
                   <a href="/practice/knowhows/rails" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">Rails</a>
                   
+                    <ul>
+                      <li class="collapse show" id="">
+                        
+                          <ul>
+                            
+                              <li><a class="td-sidebar-link td-sidebar-link__page " id="m-knowhows-rails-マスタデータの管理" href="/practice/knowhows/rails/seed_fu">マスタデータの管理</a></li>
+                            
+                              <li><a class="td-sidebar-link td-sidebar-link__page " id="m-knowhows-rails-階層データの取扱" href="/practice/knowhows/rails/nested-tree">階層データの取扱</a></li>
+                            
+                              <li><a class="td-sidebar-link td-sidebar-link__page " id="m-knowhows-rails-検索の実装" href="/practice/knowhows/rails/ransack">検索の実装</a></li>
+                            
+                              <li><a class="td-sidebar-link td-sidebar-link__page " id="m-knowhows-rails-ページングの実装" href="/practice/knowhows/rails/pagy">ページングの実装</a></li>
+                            
+                          </ul>
+                        
+                      </li>
+                    </ul>
+                  
               
                 <li class="td-sidebar-nav__section-title">
                   <a href="/practice/knowhows/rspec" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">Rspec</a>
@@ -194,193 +209,81 @@ $(document).ready(function() {
 	      <ol class="breadcrumb spb-1">
               
               
+                <li class="breadcrumb-item">
+                  <a href="http://0.0.0.0:4000/practice/knowhows/">Knowhows</a>
+                </li>
+                
+                <li class="breadcrumb-item">
+                  <a href="http://0.0.0.0:4000/practice/knowhows/rails/">Rails</a>
+                </li>
+                
                 <li class="breadcrumb-item active" aria-current="page">
-	          <a href="http://0.0.0.0:4000/practice/search/">Search</a>
+	          <a href="http://0.0.0.0:4000/practice/knowhows/rails/seed_fu">マスタデータの管理</a>
                 </li>
                 
 	      </ol>
            </nav>
            <div class="td-content">
-	      <input class="form-control td-search-input" type="search" name="q" id="search-input" placeholder="&#xf002 Search this site…"  style="margin-top:5px" autofocus>
-<i style="color:white; margin-right:8px; margin-left:5px" class="fa fa-search"></i>
+	      <h1 id="マスターデータの管理seed-fu">マスターデータの管理(seed-fu)</h1>
 
-<p><span id="search-process">Loading</span> results <span id="search-query-container" style="display: none;">for "<strong id="search-query"></strong>"</span></p>
+<h2 id="概要">概要</h2>
+<p>Ruby on Railsではマスタデータを管理する仕組みとして、seedが提供されている。
+この機能でマスターデータの投入を行うこともできるが、若干手間なので、<a href="https://github.com/mbleigh/seed-fu">seed-fu</a>を使用している。</p>
 
-<ul id="search-results"></ul>
+<h2 id="使い方">使い方</h2>
+<ul>
+  <li>db/fixtures/の下に<em>.rbを作るか、db/fixtures/[ENVIRONEMNT]/</em>.rbを作る。
+    <ul>
+      <li>後者はRAILS_ENVが一致した場合のみ流れる。</li>
+    </ul>
+  </li>
+  <li>実行するのは以下のコマンド
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bundle <span class="nb">exec </span>rake db:seed_fu
+</code></pre></div>    </div>
+  </li>
+  <li>特定のカラムにより、重複チェックしてスキップするなど便利な機能があるので、<a href="https://github.com/mbleigh/seed-fu">マニュアル</a>は一通り見たほうが良い</li>
+</ul>
 
-<script>
-	window.data = {
-		
-				
-					
-					
-					"docs-introduction": {
-						"id": "docs-introduction",
-						"title": "Introduction",
-						"categories": "",
-						"url": " /docs/introduction",
-						"content": "Introduction\nこのプラクティスでは、仮想の案件を想定しながら作り進めていきます。\nあくまで開発方針を示すのが目的となるため、本番運用を想定した作りにはしていません。\n各種パスワードの管理には十分注意してください。\n\n必要なもの\n\n  docker-compose\n\n\n利用テクノロジー\n\n  Ruby on Rails\n  Jekyll\nドキュメンテーション\n\n\n起動方法\ncompose.envの作成\nサンプルをコピーして必要な内容を設定してください。\n$ cp compose.env.sample compose.env\n\nTMDbから各自規約を確認・同意の上APIキーを取得してください。\n取得できたらTMDB_API_KEYの項目に取得したAPIキーを設定します。\n$ vi compose.env\n\n\nNuxt用Envの編集\nサンプルをコピーして設定してください。\nauth0の認証情報が必要です。\n$ cp nuxt/.env.sample nuxt/.env\n$ vi nuxt/.env\n\n\nSchemaspyの設定の編集\nサンプルをコピーして設定してください。(ENV化したいところ)\n$ cp schemaspy/config/schemaspy.properties.sample schemaspy/config/schemaspy.properties\n$ vi schemaspy/config/schemaspy.properties\n\n\nDocker Compose の 起動\ndocker-composeを起動してください。\n$ docker-compose run --rm rake db:create\n$ docker-compose run --rm rake db:migrate\n$ docker-compose run --rm rake db:seed_fu\n$ docker-compose up -d --build\n\n\nポート・URLの割り当て\nアプリケーションはポート3001でNginxのプロキシが起動します。\nそのプロキシを通してURLを以下の通り振り分けます。\n\n\n  \n    \n      URL\n      CONTAINER\n      目的\n    \n  \n  \n    \n      /\n      nuxt\n      フロントエンド\n    \n    \n      /api\n      rails\n      API\n    \n    \n      /practice\n      jekyll\n      開発ドキュメント\n    \n    \n      /coverage\n      jekyll\n      SimpleCovのコードカバレッジ"
-					}
-					
-				
-		
-				
-					,
-					
-					"docs-requirements": {
-						"id": "docs-requirements",
-						"title": "Requirements",
-						"categories": "",
-						"url": " /docs/requirements",
-						"content": "Requirements\n\n本システムにおける要件を明示する\n\n概要\n本システムはレンタルビデオ店 YEO で使用する業務システムである。\nレンタル品の商品及び在庫を管理する。\n\n店舗\n\n  複数店舗を想定する\n\n\n認証\n\n  Auth0を利用し、JWTで行う\n\n\n商品\n\n  商品は現在のところ映画関連である。\n    \n      本システムの商品情報はTMDbの映画及び番組情報と連携して作成する\n        \n          なお、製品はTMDb APIを使用しているが、TMDbによって承認または認定されていない。\n        \n      \n      映画情報の詳細は規約により保存できないためマッシュアップを実装する。\n    \n  \n  将来的には本やCDの貸し出しに対応する可能性がある。\n\n\n貸出・返却\n\n  貸し出し・返却処理がおこなえる\n\n\n売上計上\n\n  売上金が計上される。"
-					}
-					
-				
-		
-				
-					,
-					
-					"docs-requirements-role": {
-						"id": "docs-requirements-role",
-						"title": "権限管理",
-						"categories": "",
-						"url": " /docs/requirements/role",
-						"content": "認証要件\n\n付与対象\n\n  アカウントの保有者\n\n\n範囲\n\n  権限は店舗xロールで行う\n  店舗(Shops)は階層化されており、上位の店舗についた権限は引き継ぐ\n\n\n権限の種類\n\n  Admin : すべての業務が行える\n  Manager: 商品登録などの管理が行える\n  Casher: レジ・棚卸業務が行える"
-					}
-					
-				
-		
-		
-				
-					,
-					
-					"2021-welcome": {
-						"id": "2021-welcome",
-						"title": "Welcome",
-						"categories": "rails",
-						"url": " /2021/welcome/",
-						"content": "サイトを構築しました。"
-					}
-					
-				
-		
-		
-				
-					,
-					
-					"archive": {
-						"id": "archive",
-						"title": "Articles",
-						"categories": "",
-						"url": " /archive/",
-						"content": "# News Archive\n\n{% for post in site.posts  %}{% capture this_year %}{{ post.date | date: \"%Y\" }}{% endcapture %}{% capture next_year %}{{ post.previous.date | date: \"%Y\" }}{% endcapture %}\n\n{% if forloop.first %}{{this_year}}\n{% endif %}\n\n  {{ post.date | date: \"%b %-d, %Y\" }}: {{ post.title }}\n  {% if forloop.last %}{% else %}{% if this_year != next_year %}\n\n{{next_year}}\n{% endif %}{% endif %}{% endfor %}"
-					}
-					
-				
-		
-				
-					,
-					
-					"docs": {
-						"id": "docs",
-						"title": "Documentation",
-						"categories": "",
-						"url": " /docs/",
-						"content": "# Documentation\n\n\n    \n    {% for post in site.docs  %}\n    \n    {{ post.title }}\n    {{ post.description }}\n    {% endfor %}"
-					}
-					
-				
-		
-				
-					,
-					
-					"feed-xml": {
-						"id": "feed-xml",
-						"title": "",
-						"categories": "",
-						"url": " /feed.xml",
-						"content": "{{ site.title | xml_escape }}\n    {{ site.description | xml_escape }}\n    {{ site.url }}{{ site.baseurl }}/\n    \n    {{ site.time | date_to_rfc822 }}\n    {{ site.time | date_to_rfc822 }}\n    Jekyll v{{ jekyll.version }}\n    {% for post in site.posts limit:10 %}\n      \n        {{ post.title | xml_escape }}\n        {{ post.content | xml_escape }}\n        {{ post.date | date_to_rfc822 }}\n        {{ post.url | prepend: site.baseurl | prepend: site.url }}\n        {{ post.url | prepend: site.baseurl | prepend: site.url }}\n        {% for tag in post.tags %}\n        {{ tag | xml_escape }}\n        {% endfor %}\n        {% for cat in post.categories %}\n        {{ cat | xml_escape }}\n        {% endfor %}\n      \n    {% endfor %}"
-					}
-					
-				
-		
-				
-					,
-					
-					"": {
-						"id": "",
-						"title": "Yamamsa's Practice",
-						"categories": "",
-						"url": " /",
-						"content": "# Welcome to Yamamsa's Practice\n\nこのサイトは私の独断と偏見に基づくベストプラクティスをただただ晒すサイトです。\n\n## 目的\n複数人での開発を行うにあたって、スタンダードな考え方や実装方法はたくさんあります。\nしかし、細部に至っては、責任者がどう考えるかという\"決め\"が重要なことがすごく大事です。\nそこで、私とか関わる人たちが、私がどう考えるかを速やかにインプットして議論のたたき台とできるようにするため公開しています。\n\n## 利用テクノロジー\n- Docker\n- Ruby on Rails\n- Nuxt\n\n## 免責\n- 教育目的のサイトではありません。\n- デファクトスタンダードを説明するサイトでもありません。\n- 教師とするも反面教師とするも好きにしてください。\n- 利用は自己責任でお願いします。\n\n## クレジット\n\n\n  \n    \n      \n    \n  \n  \n    仮想プロジェクトでは TMDbのAPIを使用しています。\n    この製品はTMDb APIを使用していますが、TMDbによって承認または認定されていません。\n    チュートリアルの利用にあたっては各自がAPIキーを取得し設定してください。\n  \n\n\n  \n    \n      \n    \n  \n  \n    認証にAuth0を使用しています。\n    このサービスは有料です。課金管理にご注意ください。"
-					}
-					
-				
-		
-				
-					,
-					
-					"knowhows": {
-						"id": "knowhows",
-						"title": "Knowhow",
-						"categories": "",
-						"url": " /knowhows/",
-						"content": "# Knowhow\n\n\n    \n    {% for post in site.knowhows  %}\n    \n    {{ post.title }}\n    {{ post.description }}\n    {% endfor %}"
-					}
-					
-				
-		
-				
-		
-				
-					,
-					
-					"news": {
-						"id": "news",
-						"title": "News",
-						"categories": "",
-						"url": " /news/",
-						"content": "# News\n\nSubscribe with RSS to keep up with the latest news.\nFor site changes, see the changelog kept with the code base.\n\n\n\n{% for post in site.posts limit:10 %}\n   \n   {{ post.title }}\n   {{ post.date | date: \"%B %d, %Y\" }}\n   {% if post.badges %}{% for badge in post.badges %}{{ badge.tag }}{% endfor %}{% endif %}\n   {{ post.content | split:'' | first }}\n   {% if post.content contains '' %}\n      read more\n   {% endif %}\n   \n   \n{% endfor %}\n\nWant to see more? See the News Archive."
-					}
-					
-				
-		
-				
-		
-				
-		
-				
-		
-				
-					,
-					
-					"sitemap-xml": {
-						"id": "sitemap-xml",
-						"title": "",
-						"categories": "",
-						"url": " /sitemap.xml",
-						"content": "/\n     {{ \"now\" | date: \"%Y-%m-%d\" }}\n     daily\n    \n{% for section in site.data.toc %}\n     {{ site.baseurl }}{{ section.url }}/\n     {{ \"now\" | date: \"%Y-%m-%d\" }}\n     daily\n    \n{% endfor %}"
-					}
-					
-				
-		
-				
-					,
-					
-					"tags": {
-						"id": "tags",
-						"title": "Tags Index",
-						"categories": "",
-						"url": " /tags/",
-						"content": "Tags Index\n{% capture site_tags %}{% for tag in site.tags %}{% if tag %}{{ tag | first }}{% unless forloop.last %},{% endunless %}{% endif %}{% endfor %}{% endcapture %}{% assign docs_tags = \"\" %}{% for doc in site.docs %}{% assign ttags = doc.tags | join:',' | append:',' %}{% assign docs_tags = docs_tags | append:ttags %}{% endfor %}\n{% assign all_tags = site_tags | append:docs_tags %}{% assign tags_list = all_tags | split:',' | uniq | sort %}\n\n{% for tag in tags_list %}{% if tag %}{{ tag }}\n\n    {% for post in site.tags[tag] %}\n    {{- post.title -}}\n     {{- post.date | date: \"%B %d, %Y\" -}}\n{%- endfor -%}\n{% for doc in site.docs %}{% if doc.tags contains tag %}\n\n    {{ doc.title }}\n         {{- doc.date | date: \"%B %d, %Y\" -}}\n    {% endif %}{% endfor %}\n{% endif %}{%- endfor -%}"
-					}
-					
-				
-		
-	};
-</script>
-<script src="/practice/assets/js/lunr.min.js"></script>
-<script src="/practice/assets/js/search.js"></script>
+<h2 id="tips">TIPS</h2>
+<ul>
+  <li>流れる順番はファイル00_とか01_とか数字を付けて制御。
+    <ul>
+      <li>同時に流れても問題ないものは重複させる</li>
+    </ul>
+  </li>
+  <li>全環境で流すファイルをfixtures直下においてしまうと、そちらが先に実行されてからENVIRONEMENTの下が流れる。<br />
+これはデータ投入順位の制御上、不都合な場合がある
+    <ul>
+      <li>全環境用のseedはcommonフォルダにまとめ、各環境フォルダはrequireして任意のタイミングで呼び出せるようにしている。</li>
+    </ul>
+  </li>
+  <li>データ量が多い場合は、csvやyamlを作って、それを読み込む。
+    <ul>
+      <li>CSVの作成はGoogleスプレッドシートがおすすめ。Excelと違って数式を保持したまま保存してエクスポートできる。</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="参考サイト">参考サイト</h2>
+<ul>
+  <li><a href="https://github.com/mbleigh/seed-fu">seed-fu</a></li>
+  <li><a href="https://railsguides.jp/active_record_migrations.html#%E3%83%9E%E3%82%A4%E3%82%B0%E3%83%AC%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3%E3%81%A8%E3%82%B7%E3%83%BC%E3%83%89%E3%83%87%E3%83%BC%E3%82%BF">Active Record マイグレーション - Railsガイド</a></li>
+</ul>
+
+<h2 id="注意点">注意点</h2>
+<ul>
+  <li>パフォーマンスを意識しているだけあって、必要最低限の機能はExtraという形でプラグインになっている。
+    <ul>
+      <li><a href="https://ddnexus.github.io/pagy/extras/items.html">Items</a>
+クエリストリングで表示件数の指定を可能とする</li>
+    </ul>
+  </li>
+  <li>検索時に表示件数を変えたい場合に渡すプロパティは:items
+    <div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="c1"># 5件にする場合</span>
+ <span class="vi">@pagy</span><span class="p">,</span> <span class="vi">@categories</span> <span class="o">=</span> <span class="n">pagy</span><span class="p">(</span><span class="no">Category</span><span class="p">.</span><span class="nf">includes</span><span class="p">(</span><span class="ss">:parent</span><span class="p">),</span> <span class="ss">items: </span><span class="mi">5</span><span class="p">)</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
 
 <script
   src="/practice/assets/js/jquery-3.3.1/jquery-3.3.1.min.js"
@@ -431,7 +334,8 @@ $.each(headers, function(i, header){
 })
 </script>
 
-
+<script>
+$('h1').first().append('<div><span style="font-size:12px" class="badge badge-primary"><a style="cursor:pointer; color:white" href="http://0.0.0.0:4000/practice/tags#Ruby on Rails ">Ruby on Rails</a></span></div>')</script>
 
 
               

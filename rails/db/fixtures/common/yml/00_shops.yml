@@ -1,0 +1,13 @@
+- code: yeo
+  name: YEO
+  children:
+    - code: yeo-east
+      name: 東日本営業部
+    - code: yeo-west
+      name: 西日本営業部
+      children:
+        - code: yeo-west-osaka
+          name: 大阪店
+        - code: yeo-west-kobe
+          name: 神戸店
+

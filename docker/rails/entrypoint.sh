@@ -5,5 +5,7 @@ until mysqladmin ping -h mysql --silent; do
   sleep 2
 done
 echo "mysqld is started!"
+echo "force remove server.pid"
+rm -rf tmp/pids/server.pid
 
 exec "$@"

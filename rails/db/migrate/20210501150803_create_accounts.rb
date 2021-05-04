@@ -8,6 +8,6 @@ class CreateAccounts < ActiveRecord::Migration[6.1]
 
       t.timestamps
     end
-    add_index :accounts, [:sub], unique: true
+    add_index :accounts, :sub, unique: true
   end
 end

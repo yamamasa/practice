@@ -1,7 +1,7 @@
 <template>
   <main role="main" class="container">
     <header class="mb-1">
-      <h2>TMDb情報検索</h2>
+      <h2>Store Index</h2>
     </header>
     <b-form inline>
       <label class="sr-only" for="inline-form-input-name">キーワード</label>
@@ -12,7 +12,7 @@
         v-model="query.keyword"
       />
       <b-col cols="2">
-        <b-button variant="primary">Save</b-button>
+        <b-button variant="primary" @click="search">検索</b-button>
       </b-col>
     </b-form>
     <div>
@@ -37,5 +37,13 @@ export default Vue.extend({
 
     },
   },
+
+  methods: {
+    search({ params}) {
+      console.log(params)
+      this.$axios.get('/hoge')
+
+    }
+  }
 })
 </script>

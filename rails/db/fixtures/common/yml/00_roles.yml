@@ -1,0 +1,11 @@
+- code: admin
+  name: システム管理者権限
+  description: システム管理を行う権限
+
+- code: manager
+  name: マネージャー
+  description: 管理者権限
+
+- code: operator
+  code: オペレーター
+  description: 従業員権限

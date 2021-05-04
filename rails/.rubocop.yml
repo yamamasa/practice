@@ -40,7 +40,7 @@ Metrics/AbcSize:
     - 'db/fixtures/**/*'
 
 # 文字列フォーマットはパーセント表記
-FormatString:
+Style/FormatString:
   EnforcedStyle: percent
 
 # 文字列フォーマットで名前空間つきを強制しない
@@ -48,7 +48,7 @@ Style/FormatStringToken:
   Enabled: false
 
 # クラス内のクラスなどを定義する際の形式の強制無効
-ClassAndModuleChildren:
+Style/ClassAndModuleChildren:
   Enabled: false
 
 # Rspecのexampleの数を制限しない

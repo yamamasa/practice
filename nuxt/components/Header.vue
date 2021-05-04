@@ -46,6 +46,9 @@ export default {
       // return this.$auth.loggedIn ? this.$auth.$state.user.nickname : 'ゲスト'
     },
   },
+  created() {
+      this.$axios.get('/api/v1/categories')
+  },
   methods: {
     login() {
       this.$auth.loginWith('auth0')
