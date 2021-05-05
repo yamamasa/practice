@@ -22,22 +22,19 @@
 <link rel="icon" type="image/png" href="/practice/assets/favicons/android-144x144.png" sizes="144x144">
 <link rel="icon" type="image/png" href="/practice/assets/favicons/android-192x192.png"sizes="192x192">
 
-<title>Rails</title>
-<meta property="og:title" content="Rails" />
-<meta property="og:description" content="Yamamasaの独断と偏見に基づくベストプラクティスをまとめるサイト
-" />
+<title>権限テストの記述</title>
+<meta property="og:title" content="権限テストの記述" />
+<meta property="og:description" content="Rspecの権限テストの記述方法" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="http://0.0.0.0:4000" />
 <meta property="og:site_name" content="http://0.0.0.0:4000" />
 
-<meta itemprop="name" content="Rails">
-<meta itemprop="description" content="Yamamasaの独断と偏見に基づくベストプラクティスをまとめるサイト
-">
+<meta itemprop="name" content="権限テストの記述">
+<meta itemprop="description" content="Rspecの権限テストの記述方法">
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Rails"/>
-<meta name="twitter:description" content="Yamamasaの独断と偏見に基づくベストプラクティスをまとめるサイト
-"/>
+<meta name="twitter:title" content="権限テストの記述"/>
+<meta name="twitter:description" content="Rspecの権限テストの記述方法"/>
 
 <link rel="stylesheet" href="/practice/assets/css/main.css">
 <link rel="stylesheet" href="/practice/assets/css/palette.css">
@@ -164,27 +161,25 @@ $(document).ready(function() {
                 <li class="td-sidebar-nav__section-title">
                   <a href="/practice/knowhows/rails" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">Rails</a>
                   
+              
+                <li class="td-sidebar-nav__section-title">
+                  <a href="/practice/knowhows/rspec" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">Rspec</a>
+                  
                     <ul>
                       <li class="collapse show" id="">
                         
                           <ul>
                             
-                              <li><a class="td-sidebar-link td-sidebar-link__page " id="m-knowhows-rails-マスタデータの管理" href="/practice/knowhows/rails/seed_fu">マスタデータの管理</a></li>
+                              <li><a class="td-sidebar-link td-sidebar-link__page " id="m-knowhows-rspec-概要" href="/practice/knowhows/rspec/introduction">概要</a></li>
                             
-                              <li><a class="td-sidebar-link td-sidebar-link__page " id="m-knowhows-rails-階層データの取扱" href="/practice/knowhows/rails/nested-tree">階層データの取扱</a></li>
+                              <li><a class="td-sidebar-link td-sidebar-link__page " id="m-knowhows-rspec-重要ポイント" href="/practice/knowhows/rspec/point">重要ポイント</a></li>
                             
-                              <li><a class="td-sidebar-link td-sidebar-link__page " id="m-knowhows-rails-検索の実装" href="/practice/knowhows/rails/ransack">検索の実装</a></li>
-                            
-                              <li><a class="td-sidebar-link td-sidebar-link__page " id="m-knowhows-rails-ページングの実装" href="/practice/knowhows/rails/pagy">ページングの実装</a></li>
+                              <li><a class="td-sidebar-link td-sidebar-link__page " id="m-knowhows-rspec-権限テスト" href="/practice/knowhows/rspec/ability">権限テスト</a></li>
                             
                           </ul>
                         
                       </li>
                     </ul>
-                  
-              
-                <li class="td-sidebar-nav__section-title">
-                  <a href="/practice/knowhows/rspec" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">Rspec</a>
                   
               
                 <li class="td-sidebar-nav__section-title">
@@ -216,72 +211,37 @@ $(document).ready(function() {
                   <a href="http://0.0.0.0:4000/practice/knowhows/">Knowhows</a>
                 </li>
                 
+                <li class="breadcrumb-item">
+                  <a href="http://0.0.0.0:4000/practice/knowhows/rspec/">Rspec</a>
+                </li>
+                
                 <li class="breadcrumb-item active" aria-current="page">
-	          <a href="http://0.0.0.0:4000/practice/knowhows/rails">Rails</a>
+	          <a href="http://0.0.0.0:4000/practice/knowhows/rspec/ability">権限テストの記述</a>
                 </li>
                 
 	      </ol>
            </nav>
            <div class="td-content">
-	      <h1 id="ruby-on-rails-に関するノウハウ">Ruby on Rails に関するノウハウ</h1>
+	      <h1 id="権限テストの記述cancancan">権限テストの記述(cancancan)</h1>
 
-<div class="section-index">
-  <hr class="panel-line" />
-  
-    
-  
-    
-  
-    
-      <div class="entry">
-        <h5><a href="/practice/knowhows/rails/bullet">n+1問題対応</a></h5>
-        <p>Bulletを利用したN+1問題対策</p>
-      </div>
-    
-  
-    
-      <div class="entry">
-        <h5><a href="/practice/knowhows/rails/nested-tree">階層データの取り扱い</a></h5>
-        <p>階層データを扱う入れ子集合モデルについて解説</p>
-      </div>
-    
-  
-    
-      <div class="entry">
-        <h5><a href="/practice/knowhows/rails/pagy">ページングの実装</a></h5>
-        <p>pagyによるページングの実装</p>
-      </div>
-    
-  
-    
-      <div class="entry">
-        <h5><a href="/practice/knowhows/rails/ransack">Ransack</a></h5>
-        <p>検索機能を作るGemであるRansackについて説明</p>
-      </div>
-    
-  
-    
-      <div class="entry">
-        <h5><a href="/practice/knowhows/rails/seed_fu">マスタデータの管理</a></h5>
-        <p>マスタデータの管理方法</p>
-      </div>
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-</div>
+<h2 id="概要">概要</h2>
+<p>権限管理のgemであるcancancanでは、公式でテストのためのMatcher(be_able_to)が用意されている。
+テストは網羅性が重要である反面、普通に書くととても長くなる。
+今回はShared Exampleを使って便利メソッド用意しつつ短くしてみた。
+<br /></p>
 
-<h2 id="docker開発での注意">Docker開発での注意</h2>
-<p>DockerでRailsを開発する場合、ファイルの更新検知を変える必要がある</p>
-<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># config/environments/development.rb</span>
-<span class="n">config</span><span class="p">.</span><span class="nf">file_watcher</span> <span class="o">=</span> <span class="no">ActiveSupport</span><span class="o">::</span><span class="no">FileUpdateChecker</span>
-</code></pre></div></div>
+<h2 id="サンプルコード">サンプルコード</h2>
+
+<p><a href="https://github.com/yamamasa/practice/blob/main/rails/spec/models/ability_spec.rb">参考ソースコードはこちら</a></p>
+
+<h2 id="設計思想">設計思想</h2>
+<ul>
+  <li>テスト対象のオブジェクトはlet(resource)で渡す</li>
+  <li>対応するアクションと結果(true/false)を渡すとループで回してテストする。</li>
+  <li>参照のみや全不可はあらかじめ用意しておいて一行呼ぶだけで済むようにしている。</li>
+  <li>継承される権限については、shared_example作ってテストするのもよいかも</li>
+  <li>便利メソッド系は将来的にsupportに移す</li>
+</ul>
 
 <script
   src="/practice/assets/js/jquery-3.3.1/jquery-3.3.1.min.js"
@@ -333,7 +293,7 @@ $.each(headers, function(i, header){
 </script>
 
 <script>
-$('h1').first().append('<div></div>')</script>
+$('h1').first().append('<div><span style="font-size:12px" class="badge badge-primary"><a style="cursor:pointer; color:white" href="http://0.0.0.0:4000/practice/tags#cancancan ">cancancan</a></span></div>')</script>
 
 
               

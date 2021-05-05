@@ -29,5 +29,8 @@
           url: knowhows/rspec/introduction
         - title: 重要ポイント
           url: knowhows/rspec/point
+        - title: 権限テスト
+          url: knowhows/rspec/ability
+
     - title: auth0の導入
       url: knowhows/auth0
