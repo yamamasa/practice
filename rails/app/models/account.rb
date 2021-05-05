@@ -1,4 +1,6 @@
 class Account < ApplicationRecord
+  has_many :account_roles, dependent: :restrict_with_exception
+
   validates :sub, presence: true, uniqueness: true
   validates :name, presence: true
   validates :email, presence: true

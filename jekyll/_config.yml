@@ -14,7 +14,7 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: Yamamasa’s Practice
+title: YM’s Practice
 author: yamamasa
 description: > # this means to ignore newlines until "baseurl:"
   Yamamasaの独断と偏見に基づくベストプラクティスをまとめるサイト

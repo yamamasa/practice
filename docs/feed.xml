@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Yamamasa’s Practice</title>
+    <title>YM’s Practice</title>
     <description>Yamamasaの独断と偏見に基づくベストプラクティスをまとめるサイト
 </description>
     <link>http://0.0.0.0:4000/practice/</link>
     <atom:link href="http://0.0.0.0:4000/practice/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 03 May 2021 11:34:42 -0500</pubDate>
-    <lastBuildDate>Mon, 03 May 2021 11:34:42 -0500</lastBuildDate>
+    <pubDate>Tue, 04 May 2021 09:01:44 -0500</pubDate>
+    <lastBuildDate>Tue, 04 May 2021 09:01:44 -0500</lastBuildDate>
     <generator>Jekyll v4.2.0</generator>
     
       <item>

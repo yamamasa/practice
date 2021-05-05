@@ -1,10 +1,10 @@
 ---
 layout: page
-title: Yamamsa's Practice
+title: YM's Practice
 permalink: /
 ---
 
-# Welcome to Yamamsa's Practice
+# Welcome to YM's Practice
 
 このサイトは私の独断と偏見に基づくベストプラクティスをただただ晒すサイトです。
 

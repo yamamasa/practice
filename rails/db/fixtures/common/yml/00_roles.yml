@@ -7,5 +7,5 @@
   description: 管理者権限
 
 - code: operator
-  code: オペレーター
+  name: オペレーター
   description: 従業員権限

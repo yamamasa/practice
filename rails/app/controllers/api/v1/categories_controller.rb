@@ -3,6 +3,7 @@ require 'pagy/extras/headers'
 
 class Api::V1::CategoriesController < ApplicationController
   include Pagy::Backend
+  load_and_authorize_resource
 
   def index
     @q = Category.includes(:parent).ransack(params[:q])
