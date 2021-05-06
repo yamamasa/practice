@@ -4,19 +4,19 @@
     <title>YM’s Practice</title>
     <description>Yamamasaの独断と偏見に基づくベストプラクティスをまとめるサイト
 </description>
-    <link>http://0.0.0.0:4000/practice/</link>
-    <atom:link href="http://0.0.0.0:4000/practice/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 05 May 2021 09:16:01 -0500</pubDate>
-    <lastBuildDate>Wed, 05 May 2021 09:16:01 -0500</lastBuildDate>
+    <link>http://0.0.0.0:4000/</link>
+    <atom:link href="http://0.0.0.0:4000/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Thu, 06 May 2021 23:05:25 +0900</pubDate>
+    <lastBuildDate>Thu, 06 May 2021 23:05:25 +0900</lastBuildDate>
     <generator>Jekyll v4.2.0</generator>
     
       <item>
         <title>Welcome</title>
         <description>&lt;p&gt;サイトを構築しました。&lt;/p&gt;
 </description>
-        <pubDate>Fri, 30 Apr 2021 19:00:00 -0500</pubDate>
-        <link>http://0.0.0.0:4000/practice/2021/welcome/</link>
-        <guid isPermaLink="true">http://0.0.0.0:4000/practice/2021/welcome/</guid>
+        <pubDate>Sat, 01 May 2021 09:00:00 +0900</pubDate>
+        <link>http://0.0.0.0:4000/2021/welcome/</link>
+        <guid isPermaLink="true">http://0.0.0.0:4000/2021/welcome/</guid>
         
         
         <category>rails</category>
